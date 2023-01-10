@@ -1,6 +1,6 @@
 //  Sign Up Form 
 import { useState } from "react";
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function SignUp(){
     const [ formData, setFormData ] = useState({
