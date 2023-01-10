@@ -1,32 +1,22 @@
 //  MainDisplay, this will house every oher component 
-import Home from "./Home";
-import { BrowserRouter as Routes,Router, Route} from "react-router-dom";
-import Login from "./LoginForm";
-import About from "./About";
-import Navigation from "./Navigation";
-import SignUp from "./SignUpForm";
+import { Link  } from 'react-router-dom'; 
+import Home from './Home';
+
+export function Navigation(){
+    return(
+        <div className='flex gap-4 justify-center items-center'>
+            <Link to="/home"> Home</Link>
+            <Link to='/signup'>Sign Up</Link>
+            <Link to="/login">Log In</Link>
+        </div>
+    )
+}
 
 function MainDisplay(){
     return (
-        <>
-            <Router>
-            <Navigation />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/Login" element={<Login/>} />
-                <Route path="/AboutUs" element={<About />} />
-                <Route path="/SignUp" element={<SignUp />} />
-    
-            </Routes>
-            </Router>
-          
-              
-          
-          
-            <h1 className="animate-pulse font-mono text-4xl"> This is the Main Component that will house every other thing.</h1>
-            
-        
-        </>
+        <div>
+            <Home />
+        </div>
     )
 }
 

@@ -27,8 +27,8 @@ function SignUp(){
     }
 
     return(
-        <>
-            <form onSubmit={handleSubmit}>
+        <section className="min-h-full">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 ">
                 <label>
                     First Name 
                         <input type="text"  value={formData.firstName} onChange={handleChange}/>
@@ -54,13 +54,13 @@ function SignUp(){
                         <input type="password" value={formData.password} onChange={handleChange} />
                 </label>
 
-                <input type="submit" />
+                <button> Sign Up </button>
 
             </form>
             <div>
-                <h3> Have an Account? <Link to='/login'/> </h3>
+                <h3> Have an Account? <Link to='/login'> Log In </Link> </h3>
             </div>
-        </>
+        </section>
     )
 }
 
