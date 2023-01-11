@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router-dom';
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
+import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
+
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
       <Route path="/login">
           <Login />
       </Route>
+
+      <Route path="/adminannouncementsdashboard">
+          <AdminAnnouncementsDashboard />
+        </Route>
       
       <Route path="/">
         <MainDisplay />
