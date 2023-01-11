@@ -19,21 +19,19 @@ function AdminAnnouncementsDashboard() {
               <a href="/adminpostsdashboard/posts">Posts</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminannouncementsdashboard/announcements">Announcements</a>
+              <a href="/adminannouncementsdashboard/announcements">
+                Announcements
+              </a>
             </p>
           </div>
         </div>
       </div>
       <div>
         <div className="absolute inset-y-0 right-20">
-          <h1 className="fond-bold text-2xl">Announcements</h1>{" "}
-          {/* <button className="bg-[#FF731D] text-white   p-1 hover:bg-cyan-600 float-right inline-block ">
-            {"Add +"}
-          </button> */} 
+          <h1 className="font-bold text-2xl">Announcements</h1>{" "}
           <Popup
             trigger={
               <button className="bg-[#FF731D] text-white   p-1 hover:bg-cyan-600 float-right inline-block ">
-                {" "}
                 Add +
               </button>
             }

@@ -14,20 +14,19 @@ function AdminAnnouncementsDashboard() {
               <a href="/adminusersdashboard">Users</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminpostsdashboard" className="">Posts</a>
+              <a href="/adminpostsdashboard" className="">
+                Posts
+              </a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminannouncementsdashboard">
-              Announcements
-                
-              </a>
+              <a href="/adminannouncementsdashboard">Announcements</a>
             </p>
           </div>
         </div>
       </div>
       <div>
         <div className="absolute inset-y-0 right-20">
-          <h1 className="fond-bold text-2xl">Posts</h1> <br />
+          <h1 className="font-bold text-2xl">Posts</h1> <br />
           <br />
           <table className="border-collapse:collapse;">
             <thead>
