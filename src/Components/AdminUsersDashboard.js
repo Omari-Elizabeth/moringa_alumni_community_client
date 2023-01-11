@@ -1,4 +1,4 @@
-function AdminAnnouncementsDashboard() {
+function AdminUsersDashboard() {
   return (
     <>
       <div className="relative h-screen w-60 bg-[#242772]">
@@ -26,14 +26,14 @@ function AdminAnnouncementsDashboard() {
       </div>
       <div>
         <div className="absolute inset-y-0 right-20">
-          <h1 className="font-bold text-2xl">Posts</h1> <br />
+          <h1 className="font-bold text-2xl">Users</h1> <br />
           <br />
           <table className="border-collapse:collapse;">
             <thead>
               <tr className="bg-blue-50">
-                <th className="border p-2 ">Post ID</th>
-                <th className="border p-2 ">Username</th>
-                <th className="border p-2">Content</th>
+                <th className="border p-2 ">User ID</th>
+                <th className="border p-2 ">Name</th>
+                <th className="border p-2">Cohort</th>
                 <th className="border p-2 ">Action</th>
               </tr>
             </thead>
@@ -41,9 +41,7 @@ function AdminAnnouncementsDashboard() {
               <tr>
                 <td className="border ">1</td>
                 <td className="border  p-2 ">Alamed Fines</td>
-                <td className="border  p-2">
-                  The career Path is hard to get to its peak without support
-                </td>
+                <td className="border  p-2">DS-23-26</td>
                 <td className="border  p-2">
                   <a href="saf.com" className="text-blue-600">
                     Delete
@@ -58,4 +56,4 @@ function AdminAnnouncementsDashboard() {
   );
 }
 
-export default AdminAnnouncementsDashboard;
+export default AdminUsersDashboard;

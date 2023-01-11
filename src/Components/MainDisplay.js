@@ -11,7 +11,9 @@ export function Navigation() {
       <Link to="/signup">Sign Up</Link>
       <Link to="/login">Log In</Link>
       <Link to="/adminstrators">Adminstrators</Link>
-      <Link to="/adminannouncementsdashboard">AdminAnnouncementsDashboard</Link>
+      <Link to="/admindashboard/announcements">AdminAnnouncementsDashboard</Link>
+      <Link to="/admindashboard/users">AdminUsersDashboard</Link>
+      <Link to="/admindashboard/posts">AdminPostsDashboard</Link>
     </div>
   );
 }
