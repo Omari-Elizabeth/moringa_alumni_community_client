@@ -28,7 +28,7 @@ function App() {
           <Login />
       </Route>
 
-      <Route path="/adminannouncementsdashboard">
+      <Route path="/admindashboard/announcements">
           <AdminAnnouncementsDashboard />
         </Route>
       <Route path="/adminstrators">
@@ -38,10 +38,10 @@ function App() {
           <AdminLogin />
       </Route>
       
-        <Route path="/adminpostsdashboard">
+        <Route path="/admindashboard/posts">
           <AdminPostsDashboard />
         </Route>
-        <Route path="/adminusersdashboard">
+        <Route path="/admindashboard/users">
           <AdminUsersDashboard />
         </Route>
       <Route path="/">

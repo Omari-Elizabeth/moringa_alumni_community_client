@@ -9,17 +9,17 @@ function AdminAnnouncementsDashboard() {
           <br />
         </div>
         <div className="h-96 ">
-          <div className="absolute  left-0 w-20 text-center pl-12  ">
+        <div className="absolute  left-0 w-20 text-center pl-12  ">
             <p className="text-orange-600 hover:text-sky-50 ">
-              <a href="/adminusersdashboard">Users</a>
+              <a href="/admindashboard/users">Users</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminpostsdashboard" className="">
-                Posts
+              <a href="/admindashboard/posts">Posts</a>
+            </p>
+            <p className="text-orange-600 hover:text-sky-50">
+              <a href="/admindashboard/announcements">
+                Announcements
               </a>
-            </p>
-            <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminannouncementsdashboard">Announcements</a>
             </p>
           </div>
         </div>
