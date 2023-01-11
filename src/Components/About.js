@@ -1,10 +1,15 @@
 // About Page
 import Logo from "../img/logo.png"
+import { Link } from 'react-router-dom';  
+
 const About = () => {
   return (
       <>
-            <img src={Logo} alt="logo"  width={100} height={100} />
-               <div>
+             <Link to="/home">
+                <img src={Logo} alt="logo"  width={100} height={100} />
+            </Link>
+
+            <div>
               <h1>Our Vision</h1>
               <p>
                   A world in which anyone can create their future.
