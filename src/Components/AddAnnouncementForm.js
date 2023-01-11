@@ -1,17 +1,10 @@
-// // Login Page
 import { useState } from "react";
-import React from "react";
-// import { Link } from "react-router-dom";
-// import
+
 function AddAnnouncementForm() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [url, setUrl] = useState("");
 
-  // function handleChange(e) {
-  //   e.preventDefault();
-
-  // }
   function handleSubmit(e) {
     e.preventDefault();
     const announcement = {
