@@ -4,6 +4,7 @@ import MainDisplay from './Components/MainDisplay';
 import { Route, Switch } from 'react-router-dom'; 
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
+import About from './Components/About';
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
     <Switch>
       <Route path="/signup">
           <SignUp />
-      </Route>
+        </Route>
+        <Route path="/aboutus">
+          <About />
+        </Route>
+        
 
       <Route path="/login">
           <Login />
