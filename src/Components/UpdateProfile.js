@@ -1,6 +1,6 @@
 
 import {  useState } from "react";
-
+import Logo from "../img/formlogo.png"
 
 
 const UpdateProfile = () => {
@@ -33,12 +33,18 @@ const UpdateProfile = () => {
     }
     return (
         <section className="min-h-full">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3">
+            
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 border-solid border-white border-2 w-2/3 m-auto bg-cloud-burst-600 mt-2">
+                <div className="m-auto ">
+                <img src={Logo} alt="logo" className="border rounded-xl" width={100} height={100} />
+                </div>
+            
+            <h1 className="text-xl  text-international-orange-600">UPDATE PROFILE</h1>
         
-            <label>
+            <label className="text-white text-lg" >
                 First Name 
             <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={firstname} 
                 onChange={(e) => {
                     setFirstName(e.target.value)
@@ -46,10 +52,10 @@ const UpdateProfile = () => {
                     placeholder="Enter your first name"/> 
                 </label>
                 
-                <label>
+                <label className="text-white text-lg">
                 Last Name
             <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={lastname} 
                 onChange={(e) => {
                     setLastName(e.target.value)
@@ -57,21 +63,21 @@ const UpdateProfile = () => {
                     placeholder="Enter your last name "/> 
                 </label>
                 
-                <label>
+                <label className="text-white text-lg">
                 Gender
             <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={gender} 
                 onChange={(e) => {
                     setGender(e.target.value)
                     }}
-                    placeholder="Please specify your gender"/> 
+                    placeholder="Male or Female"/> 
                 </label>
                 
-                <label>
+                <label className="text-white text-lg">
                 Cohort
             <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={cohort} 
                 onChange={(e) => {
                     setCohort(e.target.value)
@@ -79,10 +85,10 @@ const UpdateProfile = () => {
                     placeholder="Enter your cohort"/> 
                 </label>
                 
-                <label>
+                <label className="text-white text-lg">
                 Birthday 
             <input type="date" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={birthday} 
                 onChange={(e) => {
                     setBirthday(e.target.value)
@@ -90,10 +96,10 @@ const UpdateProfile = () => {
                     placeholder="Input your birthday"/> 
             </label>
 
-            <label>
+            <label className="text-white text-lg">
                 Profession 
                 <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={profession} 
                 onChange={(e) => {
                     setProfession(e.target.value)
@@ -101,10 +107,10 @@ const UpdateProfile = () => {
                     placeholder="ie .UI/UX designer, Front-end Devloper"/>
                 </label>
                 
-                <label>
+                <label className="text-white text-lg">
                 Avatar
                 <input type="text" 
-                className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                className="text-black p-2 m-2 border rounded-3xl w-4/12" 
                 value={avatar} 
                 onChange={(e) => {
                     setAvatar(e.target.value)
@@ -112,7 +118,7 @@ const UpdateProfile = () => {
                    />
             </label>
 
-            <input type="submit" value="Update"className='rounded text-red-500 hover:text-slate-200'/>
+            <input type="submit" value="UPDATE"className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto'/>
 
         </form>
 
@@ -124,56 +130,3 @@ const UpdateProfile = () => {
 }
  
 export default UpdateProfile;
-
-// import { useState } from "react";
-// import { Link } from 'react-router-dom';
-
-// function SignUp(){
-   
-//     const [ username, setUsername ] = useState("");
-//     const [ password, setPassword ] = useState(""); 
-  
-//     function handleSubmit(e){
-//         e.preventDefault()
-
-//         console.log(username, password); 
-//     }
-
-//     return(
-//         <section className="min-h-full">
-//             <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3">
-//                 <label>
-//                     Username 
-//                 <input type="text" 
-//                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
-//                     value={username} 
-//                     onChange={(e) => {
-//                         setUsername(e.target.value)
-//                         }}
-//                         placeholder="Pick a username"/> 
-//                 </label>
-
-//                 <label>
-//                     Password 
-//                     <input type="password" 
-//                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
-//                     value={password} 
-//                     onChange={(e) => {
-//                         setPassword(e.target.value)
-//                         }}
-//                         placeholder="Enter Password (minimum 4 characters)"/>
-//                 </label>
-
-//                 <input type="submit" className='rounded text-red-500 hover:text-slate-200'/>
-
-//             </form>
-
-//             <div className="flex justify-center gap-5">
-//                 <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
-//                 <h3> <Link to='/home'>Return To Home</Link> </h3>
-//             </div>
-//         </section>
-//     )
-// }
-
-// export default SignUp;
