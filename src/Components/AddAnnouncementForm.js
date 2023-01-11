@@ -4,22 +4,22 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import
 function AddAnnouncementForm() {
-  const [announcement, setAnnouncement] = useState({
-    title: "",
-    content: "",
-    imageurl: "",
-  });
-  function handleChange(e) {
-    e.preventDefault();
-    setAnnouncement({
-      ...announcement,
-      [e.target.title]: e.target.value,
-      [e.target.content]: e.target.value,
-      [e.target.imageurl]: e.target.value,
-    });
-  }
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [url, setUrl] = useState("");
+
+  // function handleChange(e) {
+  //   e.preventDefault();
+
+  // }
   function handleSubmit(e) {
     e.preventDefault();
+    const announcement = {
+      title: title,
+      content: content,
+      imageurl: url,
+    };
+
     console.log(announcement);
   }
   return (
@@ -29,24 +29,21 @@ function AddAnnouncementForm() {
         <label className="text-white center">Title </label>
         <input
           type="text"
-          value={announcement.title}
-          onChange={(e) => setAnnouncement(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter Title"
         />
 
         <label className="text-white">Content </label>
         <input
           type="textarea"
-          value={announcement.content}
-          onChange={handleChange}
+          onChange={(e) => setContent(e.target.value)}
           placeholder="Enter Announcement"
         />
 
         <label className="text-white">Image URl</label>
         <input
           type="text"
-          value={announcement.imageurl}
-          onChange={handleChange}
+          onChange={(e) => setUrl(e.target.value)}
           placeholder="url"
         />
 
