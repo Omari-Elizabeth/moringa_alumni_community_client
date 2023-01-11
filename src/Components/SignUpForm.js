@@ -3,62 +3,48 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 function SignUp(){
-    const [ formData, setFormData ] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        username : "", 
-        password : ""
-    })
-
-    function handleChange(e){
-        e.preventDefault(); 
-
-        setFormData({...formData, [e.target.name] : e.target.value })
-
-        console.log(formData);
-    }
-
-
+   
+    const [ username, setUsername ] = useState("");
+    const [ password, setPassword ] = useState(""); 
+  
     function handleSubmit(e){
         e.preventDefault()
 
-        console.log(formData, "<= submitted form data")
+        console.log(username, password); 
     }
 
     return(
         <section className="min-h-full">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 ">
-                <label>
-                    First Name 
-                        <input type="text"  value={formData.firstName} onChange={handleChange}/>
-                </label>
-
-                <label>
-                    Last Name 
-                    <input type="text" value={formData.lastName} onChange={handleChange} />
-                </label>
-
-                <label>
-                    Email 
-                    <input type="text" value={formData.email} onChange={handleChange} />
-                </label>
-
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3">
                 <label>
                     Username 
-                        <input type="text" value={formData.username} onChange={handleChange} />
+                <input type="text" 
+                    className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                    value={username} 
+                    onChange={(e) => {
+                        setUsername(e.target.value)
+                        }}
+                        placeholder="Pick a username"/> 
                 </label>
 
                 <label>
                     Password 
-                        <input type="password" value={formData.password} onChange={handleChange} />
+                    <input type="password" 
+                    className="text-black p-2 m-2 border rounded-lg w-6/12" 
+                    value={password} 
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                        }}
+                        placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <button> Sign Up </button>
+                <input type="submit" className='rounded text-red-500 hover:text-slate-200'/>
 
             </form>
-            <div>
-                <h3> Have an Account? <Link to='/login'> Log In </Link> </h3>
+
+            <div className="flex justify-center gap-5">
+                <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
+                <h3> <Link to='/home'>Return To Home</Link> </h3>
             </div>
         </section>
     )
