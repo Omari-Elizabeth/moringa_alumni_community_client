@@ -13,10 +13,10 @@ function AdminAnnouncementsDashboard() {
         <div className="h-96 ">
           <div className="absolute  left-0 w-20 text-center pl-12  ">
             <p className="text-orange-600 hover:text-sky-50 ">
-              <a href="/adminannouncementsdashboard/users">Users</a>
+              <a href="/adminusersdashboard/users">Users</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/adminannouncementsdashboard/posts">Posts</a>
+              <a href="/adminpostsdashboard/posts">Posts</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
               <a href="/adminannouncementsdashboard/announcements">Announcements</a>
@@ -29,7 +29,7 @@ function AdminAnnouncementsDashboard() {
           <h1 className="fond-bold text-2xl">Announcements</h1>{" "}
           {/* <button className="bg-[#FF731D] text-white   p-1 hover:bg-cyan-600 float-right inline-block ">
             {"Add +"}
-          </button> */}
+          </button> */} 
           <Popup
             trigger={
               <button className="bg-[#FF731D] text-white   p-1 hover:bg-cyan-600 float-right inline-block ">
