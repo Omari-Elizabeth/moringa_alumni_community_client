@@ -1,6 +1,5 @@
-// Login Page
+// Admin  Login Page
 import { useState } from 'react'; 
-import { Link } from "react-router-dom";
 
 function Login(){
     const [ formData, setFormData ] = useState({ 
@@ -19,21 +18,17 @@ function Login(){
     }
 
     return(
-        <> 
-
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
+        <>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Email 
-                    <input type="text" value={formData.email} onChange={handleChange} placeholder="enter your email address"/>
+                    <input type="text" value={formData.email} onChange={handleChange} />
                 </label>
 
                 <label>
                     Password
                     <input type="password" value={formData.password} onChange={handleChange} />
                 </label>
-
-                <button> Log In </button>
-                <Link to="/signup"> Don't have an Account ? Sign Up Here</Link>
             </form>
         </>
     )
