@@ -6,6 +6,7 @@ import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
 import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
+import AdminPostsDashboard from './Components/AdminPostsDashboard'
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           <AdminAnnouncementsDashboard />
         </Route>
       
+        <Route path="/adminpostsdashboard">
+          <AdminPostsDashboard />
+        </Route>
       <Route path="/">
         <MainDisplay />
       </Route>
