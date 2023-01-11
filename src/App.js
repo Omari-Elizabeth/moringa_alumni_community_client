@@ -8,6 +8,8 @@ import AdminLogin from './Components/AdminLogin';
 import About from './Components/About';
 import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 import AdminPostsDashboard from './Components/AdminPostsDashboard'
+import AdminUsersDashboard from './Components/AdminUsersDashboard'
+
 
 
 function App() {
@@ -38,6 +40,9 @@ function App() {
       
         <Route path="/adminpostsdashboard">
           <AdminPostsDashboard />
+        </Route>
+        <Route path="/adminusersdashboard">
+          <AdminUsersDashboard />
         </Route>
       <Route path="/">
         <MainDisplay />
