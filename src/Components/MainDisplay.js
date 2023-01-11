@@ -4,12 +4,26 @@ import Home from './Home';
 
 export function Navigation(){
     return(
-        <div className='flex gap-4 justify-center items-center'>
-            <Link to="/home"> Home</Link>
-            <Link to="/aboutus"> About us</Link>
-            <Link to="/contactus"> Contact us</Link>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to="/login">Log In</Link>
+        <div className='flex gap-4 justify-center items-center bg-blue-700 text-slate-50 p-3'>
+            <button className='border-b '>
+            <Link to="/home" className='font-bold hover:text-zinc-200'> Home</Link>
+            </button>
+
+            <button className='border-b '>
+            <Link to="/aboutus" className='font-bold hover:text-zinc-200'> About us</Link>
+            </button>
+            
+            <button className='border-b '>
+                <Link to="/contactus"className='font-bold hover:text-zinc-200'> Contact us</Link>
+            </button>
+
+            <button className='border-b '>
+                <Link to='/signup'className='font-bold hover:text-zinc-200'>Sign Up</Link>
+            </button>
+            
+            <button className='border-b '>
+                <Link to="/login" className='font-bold hover:text-zinc-200'>Log In</Link>
+            </button>
         </div>
     )
 }

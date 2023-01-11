@@ -11,6 +11,7 @@ function SignUp(){
         password : ""
     })
 
+
     function handleChange(e){
         e.preventDefault(); 
 
@@ -28,6 +29,9 @@ function SignUp(){
 
     return(
         <section className="min-h-full">
+                <Link to="/home">Home</Link>
+
+          
             <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 ">
                 <label>
                     First Name 

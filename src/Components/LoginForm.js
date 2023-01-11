@@ -20,6 +20,8 @@ function Login(){
 
     return(
         <> 
+                  <Link to="/home">Home</Link>
+
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
                 <label>
