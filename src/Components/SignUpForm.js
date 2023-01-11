@@ -15,7 +15,7 @@ function SignUp(){
 
     return(
         <section className="min-h-full">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 text-black">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3">
                 <label>
                     Username 
                 <input type="text" 
@@ -38,12 +38,12 @@ function SignUp(){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded text-slate-500 hover:text-blue-700'/>
+                <input type="submit" className='rounded text-red-500 hover:text-slate-200'/>
 
             </form>
 
             <div className="flex justify-center gap-5">
-                <h3> Have an Account? <Link to='/login'> Log In </Link> </h3>
+                <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
                 <h3> <Link to='/home'>Return To Home</Link> </h3>
             </div>
         </section>

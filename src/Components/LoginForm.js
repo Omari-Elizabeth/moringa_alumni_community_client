@@ -39,10 +39,10 @@ function Login(){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded text-slate-500 hover:text-blue-700'/>
+                <input type="submit" className='rounded text-red-500 hover:text-slate-200'/>
 
                 <div className='flex justify-center gap-5'>
-                    <h3><Link to="/signup"> Don't have an Account ? Sign Up Here</Link></h3>
+                    <h3>Don't have an Account ? <Link to="/signup" className='text-red-400'> Sign Up Here</Link></h3>
                     <h3> <Link to='/home'>Return To Home</Link> </h3>
                 </div>
             </form>
