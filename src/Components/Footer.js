@@ -1,3 +1,5 @@
+// Footer Component 
+
 import { FaInstagram, FaFacebookSquare ,FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 
 
