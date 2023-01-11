@@ -6,7 +6,6 @@ function SignUp(){
    
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
-
   
     function handleSubmit(e){
         e.preventDefault()

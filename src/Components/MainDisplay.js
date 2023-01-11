@@ -8,6 +8,7 @@ export function Navigation(){
             <Link to="/home"> Home</Link>
             <Link to='/signup'>Sign Up</Link>
             <Link to="/login">Log In</Link>
+            <Link to="/adminstrators">Adminstrators</Link>
         </div>
     )
 }
