@@ -29,7 +29,11 @@ module.exports = {
           '800': '#963109', 
           '900': '#7b2807'
       }
-        }
+      },
+      backgroundImage: {
+        'home-image': "url('/src/img/home.png')",
+        'about-image': "url('/src/img/about.png')",
+      }
       },
     },
     plugins: [],

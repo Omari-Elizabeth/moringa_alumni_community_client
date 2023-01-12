@@ -7,12 +7,12 @@ import { Navigation } from "./MainDisplay";
 function Home(){
     return (
         <>
-             <div className="min-h-screen">
+             <div className="min-h-screen bg-home-image bg-cover ">
                 <Navigation />
-                <div>
-                    <p>
-                Many graduates struggle with getting opportunities for work and mentorship while
-                others have opportunities they want to share with their fellow former students and
+                <div className="items-center bg-white opacity-20" >
+                    <p className="text-black pt-36 font-bold pb-96">
+                Many graduates struggle with getting opportunities for work and mentorship while<br></br>
+                others have opportunities they want to share with their fellow former students and<br></br>
                         often have no platform to do that.
                     </p>
                 </div>
