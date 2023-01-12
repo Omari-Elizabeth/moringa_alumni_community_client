@@ -10,7 +10,7 @@ import About from './Components/About';
 
 function App() {
   return (
-    <div className="App font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300">
+    <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300">
     <Switch>
       <Route path="/signup">
           <SignUp />

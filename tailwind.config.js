@@ -28,10 +28,22 @@ module.exports = {
           '700': '#bc3d0b', 
           '800': '#963109', 
           '900': '#7b2807'
+        },
+        'alto': {
+          '50': '#fdfdfd', 
+          '100': '#fbfbfb', 
+          '200': '#f6f6f6', 
+          '300': '#f0f0f0', 
+          '400': '#e4e4e4', 
+          '500': '#d9d9d9', 
+          '600': '#c3c3c3', 
+          '700': '#a3a3a3', 
+          '800': '#828282', 
+          '900': '#6a6a6a'
       }
       },
       backgroundImage: {
-        'home-image': "url('/src/img/home.png')",
+        'home-image': "url('/src/img/hom.png')",
         'about-image': "url('/src/img/about.png')",
       },
       fontFamily: {

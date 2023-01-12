@@ -26,7 +26,7 @@ function Footer(){
                 </div>
                 
                 <div  className='flex justify-center items-center gap-36 '>
-                    <button className='w-12'><FaFacebookSquare /></button>
+                    <button><FaFacebookSquare /></button>
                     <button ><FaInstagram /></button>
                     <button><FaTwitter /></button>
                     <button><FaLinkedinIn /></button>
