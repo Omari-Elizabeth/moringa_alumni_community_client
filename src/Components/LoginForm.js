@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const token = localStorage.getItem("jwt")
 
-function Login(){
+function Login( { user, updateUser }){
    
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
@@ -30,14 +30,20 @@ function Login(){
         })
         .then(r => {
             if(r.ok){
-                r.json().then(d => console.log(d));
+                r.json().then(d => {
+                    console.log(d)
+
+                    // Create a Login Token 
+                    localStorage.setItem("login_token", d.login_token);
+                    updateUser(d.user);
+                });
             } else {
                 r.json().then(e => {
                     setTimeout(() => {
                         console.log(e.error) 
                         setHideError(false);
                         setErrorMessage(e.error);
-                    },2000);
+                    },500);
                     setHideError(true);
                     setErrorMessage("");
                 })

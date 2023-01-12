@@ -6,6 +6,7 @@ function SignUp( { user , updateUser }){
    
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
+
     const [ errorMessage, setErrorMessage ] = useState(""); 
     const [ hideError, setHideError ] = useState(true)
   
@@ -13,7 +14,7 @@ function SignUp( { user , updateUser }){
         e.preventDefault()
 
         console.log(username, password); 
-
+ 
         fetch('/users', {
             method : "POST", 
             headers : { "Content-Type" : "application/json" }, 
@@ -22,8 +23,10 @@ function SignUp( { user , updateUser }){
         .then(r => {
             if(r.ok){
                 r.json().then(d => {
-                    console.log(d)
-                    localStorage.setItem("jwt", d.jwt); 
+                    console.log(d, "<= everything returned from the server")
+                    console.log(d.jwt, "<= authorization token given by jwt from the server"); 
+
+                    localStorage.setItem("sign_in_token", d.sign_in_token); // This will sav the token in localStorage to be used in an Authentication Header in future requests.
                     updateUser(d.user); 
                 })
             } else {
@@ -32,7 +35,7 @@ function SignUp( { user , updateUser }){
                         console.log(e.error) 
                         setHideError(false);
                         setErrorMessage(e.error);
-                    },2000);
+                    },500);
                     setHideError(true);
                     setErrorMessage("");
                 })

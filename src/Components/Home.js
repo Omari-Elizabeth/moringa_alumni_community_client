@@ -1,8 +1,9 @@
 // First Screen to appear to user.
-import Footer from "./Footer";
-import { Navigation } from "./MainDisplay";
-import Logo from "../img/homelogo.png"
 import { Link } from 'react-router-dom';
+import { Navigation } from "./MainDisplay";
+
+import Footer from "./Footer";
+import Logo from "../img/homelogo.png"
 
 
 function Home(){
