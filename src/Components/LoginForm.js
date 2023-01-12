@@ -44,6 +44,7 @@ function Login(){
                 <div className='flex justify-center gap-5'>
                     <h3>Don't have an Account ? <Link to="/signup" className='text-red-400'> Sign Up Here</Link></h3>
                     <h3> <Link to='/home'>Return To Home</Link> </h3>
+                    <h3 className='text-red-400'><Link to="/adminstrators">Adminstrator Access</Link></h3>
                 </div>
             </form>
         </div>

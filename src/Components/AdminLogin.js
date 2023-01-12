@@ -41,7 +41,6 @@ function AdminLogin(){
                 <input type="submit" className='rounded text-slate-500 hover:text-blue-700'/>
 
                 <div className='flex justify-center gap-5'>
-                    {/* <h3><Link to="/signup"> Don't have an Account ? Sign Up Here</Link></h3> */}
                     <h3> <Link to='/home'>Return To Home</Link> </h3>
                 </div>
             </form>
