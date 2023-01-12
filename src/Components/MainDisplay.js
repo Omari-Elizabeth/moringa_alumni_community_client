@@ -5,12 +5,12 @@ import Logo from "../img/homelogo.png"
 
 export function Navigation(){
     return (
-        <div className='flex gap-96 bg-cloud-burst-600'>
+        <div className='flex gap-96 mt-3'>
             <div className='m-3'>
-            <img src={Logo} alt="logo"  width={100} height={100} />
+            <img src={Logo} className="border rounded-2xl ml-7" alt="logo"  width={100} height={100} />
             </div>
                
-               <div className='flex gap-9 pt-7 active:text-white  text-lg float-right mr-8 font-bold text-international-orange-600 '>
+               <div className='flex gap-9 pt-7  bg-cloud-burst-600 border rounded-full p-9 text-lg float-right mr-8 font-bold text-international-orange-600 '>
             <Link to="/home" className='hover:text-white'> Home</Link>
             <Link to="/aboutus" className='hover:text-white'> About us</Link>
             <Link to="/contactus" className='hover:text-white'> Contact us</Link>

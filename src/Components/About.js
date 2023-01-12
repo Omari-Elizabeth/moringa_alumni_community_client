@@ -1,12 +1,12 @@
 // About Page
 import Logo from "../img/logo.png";
 import { Link } from "react-router-dom";
+import { Navigation } from "./MainDisplay";
 
 const About = () => {
   return (
     <>
-      <Link to="/home">Home</Link>
-      <img src={Logo} alt="logo" width={100} height={100} />
+        <Navigation />
       <div>
         <h1>Our Vision</h1>
         <p>A world in which anyone can create their future.</p>
