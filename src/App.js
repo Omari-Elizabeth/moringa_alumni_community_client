@@ -6,6 +6,11 @@ import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import AdminLogin from './Components/AdminLogin';
 import About from './Components/About';
+import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
+import AdminPostsDashboard from './Components/AdminPostsDashboard'
+import AdminUsersDashboard from './Components/AdminUsersDashboard'
+
+
 
 function App() {
   return (
@@ -23,6 +28,9 @@ function App() {
           <Login />
       </Route>
 
+      <Route path="/admindashboard/announcements">
+          <AdminAnnouncementsDashboard />
+        </Route>
       <Route path="/adminstrators">
           <div>
               <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Only Login For Admins</h1>
@@ -30,6 +38,12 @@ function App() {
           <AdminLogin />
       </Route>
       
+        <Route path="/admindashboard/posts">
+          <AdminPostsDashboard />
+        </Route>
+        <Route path="/admindashboard/users">
+          <AdminUsersDashboard />
+        </Route>
       <Route path="/">
         <MainDisplay />
       </Route>
