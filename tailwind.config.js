@@ -33,6 +33,11 @@ module.exports = {
       backgroundImage: {
         'home-image': "url('/src/img/home.png')",
         'about-image': "url('/src/img/about.png')",
+      },
+      fontFamily: {
+        'sans': 'IM FELL French Canon'
+    
+        
       }
       },
     },
