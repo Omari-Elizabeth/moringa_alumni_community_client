@@ -6,7 +6,7 @@ import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import AdminLogin from './Components/AdminLogin';
 import About from './Components/About';
-import UpdateProfile from './Components/UpdateProfile';
+// import UpdateProfile from './Components/UpdateProfile';
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
           <About />
         </Route>
 
-        <Route path="/updateprofile">
+        {/* <Route path="/updateprofile">
           <UpdateProfile />
-        </Route>
+        </Route> */}
         
 
       <Route path="/login">
