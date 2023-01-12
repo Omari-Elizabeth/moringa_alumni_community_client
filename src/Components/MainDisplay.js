@@ -7,7 +7,7 @@ const ScrollLink = Scroll.ScrollLink;
 
 export function Navigation() {
   return (
-    <div className="flex gap-4 justify-center items-center">
+    <nav className="flex gap-4 justify-center items-center">
       <Link to="/home"> Home</Link>
       <Link to="/aboutus"> About</Link>
       <ScrollLink
@@ -20,11 +20,12 @@ export function Navigation() {
         </ScrollLink>
       <Link to="/signup"> Sign Up </Link>
       <Link to="/login">Log In</Link>
-    </div>
+    </nav>
   );
 }
 
 function MainDisplay() {
+  
   return (
     <div>
       <Home />

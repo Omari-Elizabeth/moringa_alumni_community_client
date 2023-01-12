@@ -2,16 +2,47 @@
 import { useState } from 'react'; 
 import { Link } from "react-router-dom";
 
+const token = localStorage.getItem("jwt")
+
 function Login(){
    
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
+    const [ errorMessage, setErrorMessage ] = useState(""); 
+    const [ hideError, setHideError ] = useState(true)
+
+
+    console.log(token)
 
   
     function handleSubmit(e){
         e.preventDefault()
 
         console.log(username, password); 
+
+        fetch("/login-user", {
+            method : "POST", 
+            headers : { 
+                "Content-Type" : "application/json", 
+                Authorization : `Bearer ${token}`
+            },
+            body : JSON.stringify( { username, password })
+        })
+        .then(r => {
+            if(r.ok){
+                r.json().then(d => console.log(d));
+            } else {
+                r.json().then(e => {
+                    setTimeout(() => {
+                        console.log(e.error) 
+                        setHideError(false);
+                        setErrorMessage(e.error);
+                    },2000);
+                    setHideError(true);
+                    setErrorMessage("");
+                })
+            } 
+        })
     }
 
     return(
@@ -46,6 +77,10 @@ function Login(){
                     <h3> <Link to='/home'>Return To Home</Link> </h3>
                     <h3 className='text-red-400'><Link to="/adminstrators">Adminstrator Access</Link></h3>
                 </div>
+
+                 <div>
+                    <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>
+                 </div>
             </form>
         </div>
     )

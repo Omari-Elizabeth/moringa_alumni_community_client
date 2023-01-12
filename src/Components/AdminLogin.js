@@ -7,11 +7,21 @@ function AdminLogin(){
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
 
+    const admin_token = localStorage.getItem("jwt");
   
     function handleSubmit(e){
         e.preventDefault()
 
         console.log(username, password); 
+
+        fetch('/login',{
+            method : 'POST', 
+            headers : {
+                "Content-Type" : "application/json",
+                "Authorization" : `Bearer ${admin_token}`
+            },
+            body : JSON.stringify({ username, password })
+        })
     }
     return (
             <div className='p-3'> 
