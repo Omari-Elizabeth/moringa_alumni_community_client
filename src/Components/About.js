@@ -1,6 +1,4 @@
 // About Page
-import Logo from "../img/logo.png";
-import { Link } from "react-router-dom";
 import { Navigation } from "./MainDisplay";
 
 const About = () => {
