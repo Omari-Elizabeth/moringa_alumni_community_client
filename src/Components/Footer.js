@@ -1,29 +1,34 @@
 // Footer Component 
 
 import { FaInstagram, FaFacebookSquare ,FaTwitter, FaLinkedinIn } from 'react-icons/fa'
-
+import { Element } from 'react-scroll';
 
 function Footer(){
     return(
         <>
-            <div>
-                <h3>Contact Us</h3>
-                <section>
-                    <h2> Email alumni@connect.com</h2>
-                    <h2> P.O Box </h2>
-                    <h2> Telephone </h2>
-                </section>
+            <Element id="footer" name="footer">
 
-            </div>
+                <div className='flex justify-center items-center gap-4 p-3'>
+                    <div className='text-left p-3'>
+                        <h3>Contact Us</h3>
+                        <section>
+                            <h2> Email alumni@connect.com</h2>
+                            <h2> P.O Box </h2>
+                            <h2> Telephone </h2>
+                        </section>
 
-            <div className='flex justify-center items-center gap-3'>
-                <button><FaFacebookSquare /></button>
-                <button><FaInstagram /></button>
-                <button><FaTwitter /></button>
-                <button><FaLinkedinIn /></button>
-            </div>
-        <span> Alumni Connect</span>
+                    </div>
 
+                    <div className='flex justify-center items-center gap-3'>
+                        <button className=' text-red-400'><FaFacebookSquare /></button>
+                        <button className=' text-red-400'><FaInstagram/></button>
+                        <button className=' text-red-400'><FaTwitter /></button>
+                        <button className=' text-red-400'><FaLinkedinIn /></button>
+                        <button className=' text-red-400'> Alumni Connect</button>
+                    </div>
+
+                </div>
+            </Element>
         </>
     )
 }

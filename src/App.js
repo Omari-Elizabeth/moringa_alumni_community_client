@@ -31,9 +31,10 @@ function App() {
       <Route path="/admindashboard/announcements">
           <AdminAnnouncementsDashboard />
         </Route>
+
       <Route path="/adminstrators">
           <div>
-              <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Only Login For Admins</h1>
+              <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Login Only For Admins</h1>
           </div>
           <AdminLogin />
       </Route>
@@ -41,9 +42,11 @@ function App() {
         <Route path="/admindashboard/posts">
           <AdminPostsDashboard />
         </Route>
+
         <Route path="/admindashboard/users">
           <AdminUsersDashboard />
         </Route>
+        
       <Route path="/">
         <MainDisplay />
       </Route>
