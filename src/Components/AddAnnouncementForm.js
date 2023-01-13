@@ -33,13 +33,14 @@ function AddAnnouncementForm() {
           placeholder="Enter Announcement"
         />
 
-        <label className="text-white">Image URl</label>
+        <label className="text-white text-right">Image URl</label>
         <input
           type="text"
           onChange={(e) => setUrl(e.target.value)}
           placeholder="url"
         />
-
+        <br />
+        <br />
         <button className="bg-[#FF731D] text-white hover:bg-cyan-600">
           Add
         </button>

@@ -1,6 +1,17 @@
+import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 import AddForm from "./AddAnnouncementForm";
 function AdminAnnouncementsDashboard() {
+  const [announcements, setAnnouncements] = useState([]);
+  let apiUrl = "/announcements";
+  useEffect(() => {
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((jsonfile) => {
+        setAnnouncements(jsonfile);
+      });
+  }, [apiUrl]);
+
   return (
     <>
       <div className="relative h-screen w-60 bg-[#242772]">
@@ -11,7 +22,7 @@ function AdminAnnouncementsDashboard() {
           <br />
         </div>
         <div className="h-96 ">
-          <div className="absolute  left-0 w-20 text-center pl-12  ">
+          <div className="absolute  left-0 text-center pl-6  ">
             <p className="text-orange-600 hover:text-sky-50 ">
               <a href="/admindashboard/users">Users</a>
             </p>
@@ -19,9 +30,7 @@ function AdminAnnouncementsDashboard() {
               <a href="/admindashboard/posts">Posts</a>
             </p>
             <p className="text-orange-600 hover:text-sky-50">
-              <a href="/admindashboard/announcements">
-                Announcements
-              </a>
+              <a href="/admindashboard/announcements">Announcements</a>
             </p>
           </div>
         </div>
@@ -45,66 +54,29 @@ function AdminAnnouncementsDashboard() {
           <br />
           <table className="border-collapse:collapse;">
             <thead>
-              <tr className="bg-blue-50">
+              <tr className="bg-blue-150">
                 <th className="border p-2 ">ID</th>
                 <th className="border p-2 ">Title</th>
                 <th className="border  p-2">Content</th>
                 <th className="border p-2 ">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td className="border ">1</td>
-                <td className="border  p-2 ">The distant Search</td>
-                <td className="border  p-2">
-                  The career Path is hard to get to its peak without support
-                </td>
-                <td className="border  p-2">
-                  <a href="saf.com" className="text-blue-600">
-                    Delete
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td className="border  ">2</td>
-                <td className="border  ">The distant Search</td>
-                <td className="border  ">
-                  The career Path is hard to get to its peak without support.
-                </td>
-                <td className="border  ">
-                  <a href="saf.com" className="text-blue-600">
-                    Delete
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td className="border  ">3</td>
-                <td className="border  ">The distant Search</td>
-                <td className="border  ">
-                  The career Path is hard to get to its peak without support.
-                </td>
-                <td className="border  ">
-                  <a
-                    href="saf.com"
-                    className="text-blue-600 active:bg-indigo-500,underline"
-                  >
-                    Delete
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td className="border  ">4</td>
-                <td className="border  ">The distant Search</td>
-                <td className="border  ">
-                  The career Path is hard to get to its peak without support.
-                </td>
-                <td className="border  ">
-                  <a href="saf.com" className="text-blue-600">
-                    Delete
-                  </a>
-                </td>
-              </tr>
-            </tbody>
+            {announcements.map((announcements, i) => {
+              return (
+                <tbody>
+                  <tr value={announcements}>
+                    <td className="border  p-2 ">{announcements.id}</td>
+                    <td className="border  p-2 ">{announcements.title}</td>
+                    <td className="border  p-2 ">{announcements.content}</td>
+                    <td className="border  p-2 ">
+                      <a href="saf.com" className="text-blue-600">
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              );
+            })}
           </table>
         </div>
       </div>
