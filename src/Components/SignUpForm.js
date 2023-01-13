@@ -1,6 +1,6 @@
 //  Sign Up Form 
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 function SignUp( { user , updateUser }){
    
@@ -12,8 +12,6 @@ function SignUp( { user , updateUser }){
   
     function handleSubmit(e){
         e.preventDefault()
-
-        console.log(username, password); 
  
         fetch('/users', {
             method : "POST", 
@@ -24,10 +22,14 @@ function SignUp( { user , updateUser }){
             if(r.ok){
                 r.json().then(d => {
                     console.log(d, "<= everything returned from the server")
-                    console.log(d.jwt, "<= authorization token given by jwt from the server"); 
 
-                    localStorage.setItem("sign_in_token", d.sign_in_token); // This will sav the token in localStorage to be used in an Authentication Header in future requests.
+                    // This will save the token in localStorage to be used in an Authentication Header in future requests.
+                    localStorage.setItem("login_token", d.token); 
+                    localStorage.setItem("user_id", d.user.id)
+
                     updateUser(d.user); 
+
+                    return <Redirect to="/alum_home"/>
                 })
             } else {
                 r.json().then(e => {
@@ -80,6 +82,8 @@ function SignUp( { user , updateUser }){
             <div>
                 <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>
             </div>
+
+            { user ? <Redirect to="/alum_home" /> : <Redirect to="/signup" /> }
         </section>
     )
 }

@@ -24,7 +24,7 @@ export function Navigation() {
   );
 }
 
-function MainDisplay( { user , logged, updateUser , updateLogged }) {
+function MainDisplay() {
 
   return (
     <div>

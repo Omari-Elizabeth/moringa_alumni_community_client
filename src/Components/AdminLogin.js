@@ -1,21 +1,21 @@
 // Admin  Login Page
 import { useState } from 'react'; 
-import { Link  } from "react-router-dom";
+import { Link, Redirect  } from "react-router-dom";
 import { redirect } from "react-router"; 
 
-function AdminLogin( { admin , updateAdmin }){
+function AdminLogin( { admin , setAdmin }){
      
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
 
-    const [ errorMessage, setErrorMessage ] = useState(""); 
-    const [ hideError, setHideError ] = useState(true)
+    const [ errorMessages, setErrorMessages ] = useState([]); 
+    const [ hideErrors, setHideErrors ] = useState(true)
   
   
     function handleSubmit(e){
         e.preventDefault()
 
-        fetch('/login',{
+        fetch('/admin-login',{
             method : 'POST', 
             headers : {
                 "Content-Type" : "application/json",
@@ -25,19 +25,24 @@ function AdminLogin( { admin , updateAdmin }){
         .then(r => {
             if(r.ok){
                 r.json().then(d => {
-                    localStorage.setItem("admin_token", d.admin_token); 
-                    updateAdmin(d.admin);
+                    // Store Admin Token and their ID in LocalStorage 
+                    localStorage.setItem("admin_token", d.token); 
+                    localStorage.setItem("admin_id", d.admin.id);
+                    
+                    // Store Admin in State 
+                    setAdmin(d.admin);
+                    
                     redirect("/alumhome");
                 })
             } else { 
-                r.json().then(e => {
+                r.json().then((e) => {
                     setTimeout(() => {
-                        console.log(e.error) 
-                        setHideError(false);
-                        setErrorMessage(e.error);
+                        console.log(e.errors) 
+                        setHideErrors(false);
+                        setErrorMessages(e.errors);
                     },500);
-                    setHideError(true);
-                    setErrorMessage("");
+                    setHideErrors(true);
+                    setErrorMessages([]);
                 })
             }
         } )
@@ -74,10 +79,17 @@ function AdminLogin( { admin , updateAdmin }){
                 </div>
 
                 <div>
-                    <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>
+                    <section hidden={hideErrors}>
+                        {errorMessages.map((e) => {
+                            return <h3 className="text-red-600 font-bold text-xl p-3" key={errorMessages.indexOf(e)}>{e}</h3>
+
+                        })}
+                    </section>
                  </div>
 
             </form>
+
+            { admin ? <Redirect to="/admin_home" /> : <Redirect to="/admin_login" /> }
         </div>
     )
 }
