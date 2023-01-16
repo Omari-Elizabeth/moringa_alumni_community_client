@@ -86,10 +86,7 @@ function SignUp( { user , updateUser }){
 
             </form>
 
-            <div className="flex justify-center gap-5">
-                <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
-                <h3> <Link to='/home'>Return To Home</Link> </h3>
-            </div>
+    
 
             <div>
                 <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>

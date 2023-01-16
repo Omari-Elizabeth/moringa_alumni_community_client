@@ -1,5 +1,6 @@
 // About Page
 import { Navigation } from "./MainDisplay";
+import Footer from "./Footer.js"
 
 const About = () => {
   return (
@@ -12,7 +13,8 @@ const About = () => {
           <p className="font-bold">A world in which anyone<br></br> can create their future.</p>
           <p className="pt-4 pb-36 p-2">Our vision is one that strives to connect our Alumni to the future
             they envision for themselves.
-          </p>
+            </p>
+            <Footer />
           </div>
          
         </div>
