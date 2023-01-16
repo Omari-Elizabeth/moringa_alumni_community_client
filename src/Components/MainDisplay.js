@@ -2,6 +2,9 @@
 import { Link  } from 'react-router-dom'; 
 import Home from './Home';
 import Logo from "../img/homelogo.png"
+import Scroll from 'react-scroll'; 
+
+const ScrollLink = Scroll.ScrollLink; 
 
 export function Navigation(){
     return (
@@ -16,20 +19,32 @@ export function Navigation(){
             <Link to="/contactus" className='hover:text-white'> Contact us</Link>
             <Link to='/signup' className='hover:text-white'>Sign Up</Link>
             <Link to="/login" className='hover:text-white'>Log In</Link>
-            <Link to="/adminstrators" className='hover:text-white'>Adminstrators</Link>
+                <Link to="/adminstrators" className='hover:text-white'>Adminstrators</Link>
+                
+                <ScrollLink
+        to="#footer"
+        spy={true}
+        smooth={true}
+        duration={500}
+        >
+          Contacts
+        </ScrollLink>
+      <Link to="/signup"> Sign Up </Link>
+      <Link to="/login">Log In</Link>
+    </div>
             {/* <Link to="/updateprofile">Update Profile</Link> */}
         </div>
-        </div>
+        
      
     )
 }
 
-function MainDisplay(){
-    return (
-        <div>
-            <Home />
-        </div>
-    )
+function MainDisplay() {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
 
-export default MainDisplay; 
+export default MainDisplay;

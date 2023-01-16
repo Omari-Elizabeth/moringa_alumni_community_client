@@ -1,7 +1,7 @@
 // Footer Component 
 
 import { FaInstagram, FaFacebookSquare ,FaTwitter, FaLinkedinIn } from 'react-icons/fa'
-
+import { Element } from 'react-scroll';
 
 function Footer(){
     return(
@@ -34,6 +34,7 @@ function Footer(){
                 <span className='pb-20 text-lg text-international-orange-600' > Alumni Connect</span>
             </div>
            
+
 
         </>
     )
