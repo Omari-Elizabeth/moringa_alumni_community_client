@@ -68,7 +68,7 @@ function App() {
 
   
   return (
-    <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  text-slate-300">
+    <div className="App alto-500 font-sans leading-snug text-center min-h-full justify-center items-center  text-slate-300">
     <Switch>
       <Route path="/signup">
           <SignUp  user={user} setUser={setUser} />
@@ -94,7 +94,7 @@ function App() {
       {/* <Route path="/adminstrators"> */}
       <Route path="/admin_login">
           <div>
-              <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Login Only For Admins</h1>
+              <h1 className='text-3xl p-4 text-orange-600 animate-pulse mt-12' > Login Only For Admins</h1>
           </div>
           <AdminLogin admin={admin} setAdmin={setAdmin}/>
       </Route>

@@ -50,7 +50,7 @@ function AdminLogin( { admin , setAdmin }){
     }
     return (
             <div className='p-3'> 
-            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-2 h-full">
+            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 rounded-3xl gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-8 h-full">
             <div className="m-auto ">
                 <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
                 </div>
