@@ -2,6 +2,7 @@
 import { useState } from 'react'; 
 import { Link, Redirect  } from "react-router-dom";
 import { redirect } from "react-router"; 
+import Logo from "../img/formlogo.png"
 
 function AdminLogin( { admin , setAdmin }){
      
@@ -49,8 +50,11 @@ function AdminLogin( { admin , setAdmin }){
     }
     return (
             <div className='p-3'> 
-            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 ">
-            <label>
+            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-2 h-full">
+            <div className="m-auto ">
+                <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
+                </div>
+            <label className="text-white text-lg">
                     Username 
                 <input type="text" 
                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
@@ -61,7 +65,7 @@ function AdminLogin( { admin , setAdmin }){
                         placeholder="Pick a username"/> 
                 </label>
 
-                <label>
+                <label className="text-white text-lg">
                     Password 
                     <input type="password" 
                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
@@ -72,10 +76,10 @@ function AdminLogin( { admin , setAdmin }){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded text-slate-500 hover:text-blue-700'/>
+                <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto'/>
 
                 <div className='flex justify-center gap-5'>
-                    <h3> <Link to='/home'>Return To Home</Link> </h3>
+                    <h3> <Link to='/home'>Return To<span className='text-international-orange-600 font-bold'> Home</span> </Link> </h3>
                 </div>
 
                 <div>

@@ -68,12 +68,7 @@ function App() {
 
   
   return (
-<<<<<<< HEAD
     <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300">
-=======
-    <div className="App font-mono leading-snug text-center justify-center items-center bg-slate-800 min-h-screen text-slate-300">
-   
->>>>>>> 655d3b7a17841ae29617437d354e03a679501184
     <Switch>
       <Route path="/signup">
           <SignUp  user={user} setUser={setUser} />
@@ -92,21 +87,17 @@ function App() {
           <Login user={user} updateUser={setUser} />
       </Route>
 
-<<<<<<< HEAD
       <Route path="/admindashboard/announcements">
           <AdminAnnouncementsDashboard />
         </Route>
 
-      <Route path="/adminstrators">
-=======
+      {/* <Route path="/adminstrators"> */}
       <Route path="/admin_login">
->>>>>>> 655d3b7a17841ae29617437d354e03a679501184
           <div>
               <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Login Only For Admins</h1>
           </div>
           <AdminLogin admin={admin} setAdmin={setAdmin}/>
       </Route>
-<<<<<<< HEAD
       
         <Route path="/admindashboard/posts">
           <AdminPostsDashboard />
@@ -115,7 +106,6 @@ function App() {
         <Route path="/admindashboard/users">
           <AdminUsersDashboard />
         </Route>
-=======
 
       <Route path="/alum_home">
           <MainAlumView  user={user} setUser={setUser} login_token={login_token} user_id={user_id} />
@@ -125,7 +115,6 @@ function App() {
       <Route path="/admin_home">
           <MainAdminView admin={admin} admin_token={admin_token} admin_id={admin_id} setAdmin={setAdmin}/>
       </Route>
->>>>>>> 655d3b7a17841ae29617437d354e03a679501184
         
       <Route path="/">
         <MainDisplay user={user} setUser={setUser}/>
