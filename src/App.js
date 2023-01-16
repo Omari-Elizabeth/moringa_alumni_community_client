@@ -15,6 +15,7 @@ import AdminUsersDashboard from './Components/AdminUsersDashboard'
 
 import AdminLogin from './Components/AdminLogin';
 
+
 // import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 // import AdminPostsDashboard from './Components/AdminPostsDashboard'
 // import AdminUsersDashboard from './Components/AdminUsersDashboard'
@@ -26,6 +27,7 @@ function App() {
 
   const [ user, setUser ] = useState(null); 
   const [ admin, setAdmin ] = useState(null); 
+  const [ announcements, setAnnouncements ] = useState([])
 
   const login_token = localStorage.getItem("login_token"); 
   const user_id = localStorage.getItem("user_id"); 
@@ -61,6 +63,7 @@ function App() {
         r.json().then(d => {
           console.log(d)
           setAdmin(d)
+          setAnnouncements(d.announcements)
         })
       }
     })
@@ -118,7 +121,12 @@ function App() {
       <Route path="/admin_home">
           <MainAdminView admin={admin} admin_token={admin_token} admin_id={admin_id} setAdmin={setAdmin}/>
       </Route>
+
+      <Route path="/admin_announcements">
+          <AdminAnnouncementsDashboard announcements={announcements} />
+      </Route>
         
+
       <Route path="/">
         <MainDisplay user={user} setUser={setUser}/>
       </Route>
