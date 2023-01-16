@@ -76,6 +76,16 @@ function SignUp( { user , setUser }){
                         }}
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
+                <label className="text-white text-lg">
+                    Confirm Password 
+                    <input type="password" 
+                    className="text-black p-2 m-2 border rounded-3xl w-6/12" 
+                    value={password} 
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                        }}
+                        placeholder="Confirm Password"/>
+                </label>
 
                 <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
                 
