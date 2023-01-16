@@ -3,7 +3,7 @@ import { useState } from "react";
 import Logo from "../img/formlogo.png"
 import { Link, Redirect } from 'react-router-dom';
 
-function SignUp( { user , updateUser }){
+function SignUp( { user , setUser }){
    
     const [ username, setUsername ] = useState("");
     const [ password, setPassword ] = useState(""); 
@@ -26,9 +26,9 @@ function SignUp( { user , updateUser }){
 
                     // This will save the token in localStorage to be used in an Authentication Header in future requests.
                     localStorage.setItem("login_token", d.token); 
-                    localStorage.setItem("user_id", d.user.id)
+                    localStorage.setItem("user_id", d.id)
 
-                    updateUser(d.user); 
+                    setUser(d.user); 
 
                     return <Redirect to="/alum_home"/>
                 })
@@ -95,7 +95,7 @@ function SignUp( { user , updateUser }){
                 <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>
             </div>
 
-            { user ? <Redirect to="/alum_home" /> : <Redirect to="/signup" /> }
+            { user ?  <Redirect to="/alum_home" /> :  <Redirect to="/signup" /> }
         </section>
     )
 }

@@ -1,7 +1,7 @@
 // All the User Views Are Nested Here After the User is Logged In 
 // import { Redirect } from "react-router-dom";
 
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 
 import AnnounceMents from './Announcements';
 import PostList from "./PostList";
@@ -14,12 +14,15 @@ function AlumNavigation(){
 
     function signOut(){
         setUser(null)
+        
         localStorage.clear()
+
+        return <Redirect to="/" />
     }
 
     return(
         <div>
-            <button onClick={signOut}>Sign Out</button>
+            <button onClick={signOut} className="border rounded-lg p-1 font-bold border-slate-800 bg-red-700 hover:bg-slate-500 hover:text-white">Log Out</button>
         </div>
     )
 }
@@ -27,7 +30,7 @@ function AlumNavigation(){
 
 function LoggedDisplay(){
     return (
-        <div>
+        <div className="min-h-screen p-4 flex">
             <AlumNavigation />
             <div>
                 <h1>Hello {user.username} ! </h1>

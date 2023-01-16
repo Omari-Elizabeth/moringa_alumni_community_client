@@ -1,3 +1,4 @@
+// <<<<<<< HEAD
 import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 import AddForm from "./AddAnnouncementForm";
@@ -80,6 +81,29 @@ function AdminAnnouncementsDashboard() {
           </table>
         </div>
       </div>
+{/* =======
+// import Popup from "reactjs-popup";
+// import AddForm from "./AddAnnouncementForm";
+
+
+function AdminAnnouncementsDashboard( { announcements } ) {
+  
+  const announcementsList = announcements.map((announcement ) => {
+    const { content, id , title } = announcement ; 
+    return (
+        <div key={id}>
+            <h2>{title}</h2>
+            <section>
+              {content}
+            </section>
+        </div>
+    )
+  })
+
+  return (
+    <>
+       {announcementsList}
+>>>>>>> 5ff68a30dc535855131881014b9741df011514e8 */}
     </>
   );
 }
