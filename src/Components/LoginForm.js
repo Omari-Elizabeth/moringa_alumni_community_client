@@ -47,7 +47,7 @@ function Login( { user, updateUser }){
 
     return(
         <div className='p-3'> 
-            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 border-solid border-white border-2  w-2/4 m-auto  bg-cloud-burst-600 mt-2 ">
+            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3  rounded-3xl border-solid border-white border-2  w-2/4 m-auto  bg-cloud-burst-600 mt-20  ">
             <div className="m-auto mt-3">
                 <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
             </div>
