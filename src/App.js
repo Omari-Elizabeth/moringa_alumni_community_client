@@ -7,8 +7,14 @@ import MainDisplay from './Components/MainDisplay';
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
+import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
+import AdminPostsDashboard from './Components/AdminPostsDashboard'
+import AdminUsersDashboard from './Components/AdminUsersDashboard'
+
+
 
 import AdminLogin from './Components/AdminLogin';
+
 
 // import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 // import AdminPostsDashboard from './Components/AdminPostsDashboard'
@@ -21,6 +27,7 @@ function App() {
 
   const [ user, setUser ] = useState(null); 
   const [ admin, setAdmin ] = useState(null); 
+  const [ announcements, setAnnouncements ] = useState([])
 
   const login_token = localStorage.getItem("login_token"); 
   const user_id = localStorage.getItem("user_id"); 
@@ -56,6 +63,7 @@ function App() {
         r.json().then(d => {
           console.log(d)
           setAdmin(d)
+          setAnnouncements(d.announcements)
         })
       }
     })
@@ -63,8 +71,7 @@ function App() {
 
   
   return (
-    <div className="App font-mono leading-snug text-center justify-center items-center bg-slate-800 min-h-screen text-slate-300">
-   
+    <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300">
     <Switch>
       <Route path="/signup">
           <SignUp  user={user} setUser={setUser} />
@@ -73,18 +80,38 @@ function App() {
         <Route path="/aboutus">
           <About />
         </Route>
+
+        {/* <Route path="/updateprofile">
+          <UpdateProfile />
+        </Route> */}
         
 
       <Route path="/login">
           <Login user={user} updateUser={setUser} />
       </Route>
 
+      <Route path="/admindashboard/announcements">
+          <AdminAnnouncementsDashboard />
+        </Route>
+
+       
+        {/* <Route path="/adminstrators">
+      
+      </Route> */}
       <Route path="/admin_login">
           <div>
               <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Login Only For Admins</h1>
           </div>
           <AdminLogin admin={admin} setAdmin={setAdmin}/>
       </Route>
+      
+        <Route path="/admindashboard/posts">
+          <AdminPostsDashboard />
+        </Route>
+
+        <Route path="/admindashboard/users">
+          <AdminUsersDashboard />
+        </Route>
 
       <Route path="/alum_home">
           <MainAlumView  user={user} setUser={setUser} login_token={login_token} user_id={user_id} />
@@ -94,7 +121,12 @@ function App() {
       <Route path="/admin_home">
           <MainAdminView admin={admin} admin_token={admin_token} admin_id={admin_id} setAdmin={setAdmin}/>
       </Route>
+
+      <Route path="/admin_announcements">
+          <AdminAnnouncementsDashboard announcements={announcements} />
+      </Route>
         
+
       <Route path="/">
         <MainDisplay user={user} setUser={setUser}/>
       </Route>
