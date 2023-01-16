@@ -47,9 +47,8 @@ module.exports = {
         'about-image': "url('/src/img/about.png')",
       },
       fontFamily: {
-        'sans': 'IM FELL French Canon'
-    
-        
+        'sans': "'Maven Pro', sans-serif;",
+        'anton':"'Anton', sans-serif;"
       }
       },
     },
