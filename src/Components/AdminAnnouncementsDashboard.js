@@ -13,6 +13,16 @@ function AdminAnnouncementsDashboard() {
         setAnnouncements(jsonfile);
       });
   }, [apiUrl]);
+  // function AdminAnnouncementsDashboard( { announcements } ) {
+
+  //   const announcementsList = announcements.map((announcement ) => {
+  //     const { content, id , title } = announcement ; 
+  //     return (
+  //         <div key={id}>
+  //             <h2>{title}</h2>
+  //             <section>
+  //               {content}
+  //             </section>
 
   return (
     <>
@@ -37,7 +47,10 @@ function AdminAnnouncementsDashboard() {
           </div>
         </div>
       </div>
+      {/* )
+  }) */}
       <div>
+
         <div className="absolute inset-y-0 right-20">
           <h1 className="font-bold text-2xl">Announcements</h1>{" "}
           <Popup
