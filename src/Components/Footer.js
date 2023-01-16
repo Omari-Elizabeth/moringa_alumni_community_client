@@ -6,6 +6,7 @@ import { Element } from 'react-scroll';
 function Footer(){
     return(
         <>
+            <Element id="footer" name="footer">
             <div className='bg-cloud-burst-600 '>
                 <div className='flex pb-8' >
                     <div className='p-7 w-2/3'>
@@ -33,9 +34,7 @@ function Footer(){
                 </div>
                 <span className='pb-20 text-lg text-international-orange-600' > Alumni Connect</span>
             </div>
-           
-
-
+            </Element>
         </>
     )
 }

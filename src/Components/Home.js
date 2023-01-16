@@ -1,6 +1,9 @@
 // First Screen to appear to user.
-import Footer from "./Footer";
 import { Navigation } from "./MainDisplay";
+import Footer from "./Footer.js"
+
+
+
 
 
 
@@ -16,22 +19,12 @@ function Home() {
                 others have opportunities they want to share with their fellow former students and<br></br>
                         often have no platform to do that.
                     </p>
+        </div>
                  
-                </div>
 
-                <div>
-                    <h1>Our Vision</h1>
-                    <section>
-                        <p>
-                            A world in which anyone can create their future.
-                        </p>
-                        <p>
-                            Our vision is one that strives to connect our Alumni to the future they envision for themselves.
-                        </p>
-                    </section>
+               
             </div>
-                <Footer />
-            </div>
+          <Footer />
         </>
      )
 }
