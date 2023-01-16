@@ -28,7 +28,7 @@ export function Navigation(){
             {/* <Link to="/contactus" className='hover:text-white'> Contact us</Link> */}
             <Link to='/signup' className='hover:text-white'>Sign Up</Link>
             <Link to="/login" className='hover:text-white'>Log In</Link>
-                <Link to="/adminstrators" className='hover:text-white'>Adminstrators</Link>
+                <Link to="/admin_login" className='hover:text-white'>Adminstrators</Link>
                 
 
 

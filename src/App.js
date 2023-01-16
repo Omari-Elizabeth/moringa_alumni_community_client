@@ -91,7 +91,10 @@ function App() {
           <AdminAnnouncementsDashboard />
         </Route>
 
-      {/* <Route path="/adminstrators"> */}
+       
+        {/* <Route path="/adminstrators">
+      
+      </Route> */}
       <Route path="/admin_login">
           <div>
               <h1 className='text-3xl p-4 text-orange-600 animate-pulse'> Login Only For Admins</h1>
