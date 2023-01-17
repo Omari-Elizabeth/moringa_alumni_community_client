@@ -7,7 +7,7 @@ function Home() {
     <>
       <div
         className="bg-home-image bg-cover bg-opacity-50 "
-        style={{ height: "90vh" }}
+        style={{ height: "100vh" }}
       >
         <Navigation />
         <div className="items-center ">

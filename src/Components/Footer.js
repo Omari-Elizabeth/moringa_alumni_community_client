@@ -16,8 +16,8 @@ function Footer() {
   return (
     <>
       <Element id="footer" name="footer">
-        <div className="bg-cloud-burst-600 w-full px-28">
-          <div className="flex pb-20 gap-12 ">
+        <div className="bg-cloud-burst-600 w-full px-28 "  style={{ height: "80vh" }}>
+          <div className="flex pb-19 gap-8 ">
             <div className=" w-1/2 ">
               <h3 className="text-2xl font-bold text-international-orange-600 pt-10 pb-3">
                 Contact Us
@@ -60,7 +60,7 @@ function Footer() {
             </div>
           </div>
 
-                  <div className="flex justify-center items-center gap-20 ">
+                  <div className="  flex justify-center items-center gap-14 pt-6 ">
                   <a href="https://www.instagram.com/moringaschool/">
                   <img
             src={Insta}
@@ -120,12 +120,14 @@ function Footer() {
               <FaLinkedinIn />
             </button>
           </div> */}
-          <span className="pb-20 text-lg text-international-orange-600">
+        
+                  </div>
+                  <span className="  text-lg text-international-orange-600">
             {" "}
             Alumni Connect
           </span>
-                  </div>
-                  </div>
+              </div>
+        
           </Element>
          
     </>

@@ -48,7 +48,7 @@ function SignUp( { user , updateUser }){
 
     return(
         <section className="min-h-full">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3  rounded-3xl border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-20">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3  rounded-3xl border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-20 " style={{ height: "80vh"}}>
 
             <div className="m-auto ">
                 <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
@@ -77,7 +77,7 @@ function SignUp( { user , updateUser }){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
+                <input type="submit" className='rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border  m-auto' />
                 
                 <div className="flex justify-center gap-5">
                 <h3> Have an Account? <Link to='/login' className="text-international-orange-600"> Log In </Link> </h3>
