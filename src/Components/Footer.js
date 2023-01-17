@@ -17,7 +17,7 @@ function Footer() {
     <>
       <Element id="footer" name="footer">
         <div className="bg-cloud-burst-600 w-full px-28 "  style={{ height: "80vh" }}>
-          <div className="flex pb-19 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 pb-19 gap-8 ">
             <div className=" w-1/2 ">
               <h3 className="text-2xl font-bold text-international-orange-600 pt-10 pb-3">
                 Contact Us
