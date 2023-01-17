@@ -20,7 +20,7 @@ export function Navigation() {
           />
         </div>
 
-        <div className="flex gap-9 pt-7  bg-cloud-burst-600 border rounded-full p-9 text-lg float-right mr-8 font-bold text-international-orange-600 ">
+        <div className="flex gap-9   bg-cloud-burst-600 border rounded-full  text-lg p-9 font-bold text-international-orange-600 ">
           <Link to="/home" className="hover:text-white">
             {" "}
             Home
