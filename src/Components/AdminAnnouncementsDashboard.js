@@ -54,7 +54,7 @@ function AdminAnnouncementsDashboard() {
           <br />
           {announcements.map((announcements, i) => {
             return (
-              <div className="bg-[#242747] p-8">
+              <div key={i} className="bg-[#242747] p-8">
                 <h2 className="text-blue-500 bg-white">
                   {announcements.title}
                 </h2>
