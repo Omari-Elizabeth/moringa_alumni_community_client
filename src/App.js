@@ -7,7 +7,6 @@ import MainDisplay from './Components/MainDisplay';
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
-import AnnouncementList from './Components/Announcements';
 
 import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 import AdminPostsDashboard from './Components/AdminPostsDashboard'
@@ -73,7 +72,7 @@ function App() {
 
   
   return (
-    <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300">
+    <div className="App alto-500 font-sans leading-snug text-center justify-center items-center  min-h-screen text-slate-300  min-w-screen">
     <Switch>
       <Route path="/signup">
           <SignUp  user={user} setUser={setUser} />
@@ -119,11 +118,7 @@ function App() {
           <MainAlumView  user={user} setUser={setUser} login_token={login_token} user_id={user_id} />
       </Route>
 
-      <Route path="/announcements">
-        <AnnouncementList />
-      </Route>
-
-
+  
       <Route path="/admin_home">
           <MainAdminView admin={admin} admin_token={admin_token} admin_id={admin_id} setAdmin={setAdmin}/>
       </Route>

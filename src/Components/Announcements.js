@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 
 function AnnouncementList(){
     const [ announcements, setAnnouncements ] = useState([]); 
@@ -29,7 +28,9 @@ function AnnouncementList(){
         return(
             <div>
                 <h1>Announcements : </h1>
-                {displayAnnouncements}
+                <section>
+                    {displayAnnouncements}
+                </section>
             </div>
         )
     }
@@ -45,7 +46,6 @@ function AnnouncementList(){
 
     return(
         <div className='min-h-screen'>
-            <Link to="/alum_home">Back</Link>
             {announcements.length <= 0 ? <NoAnnouncements /> :  <AllAnnouncements /> }
         </div>
     )
