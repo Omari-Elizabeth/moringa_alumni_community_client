@@ -1,11 +1,15 @@
 // Footer Component
+import Insta from "../img/insta.png";
+import Linkedin from "../img/linkedin.png";
+import Twitter from "../img/twitter.png";
+import Facebook from "../img/face.png";
 
-import {
-  FaInstagram,
-  FaFacebookSquare,
-  FaTwitter,
-  FaLinkedinIn,
-} from "react-icons/fa";
+// import {
+//   FaInstagram,
+//   FaFacebookSquare,
+//   FaTwitter,
+//   FaLinkedinIn,
+// } from "react-icons/fa";
 import { Element } from "react-scroll";
 
 function Footer() {
@@ -18,7 +22,7 @@ function Footer() {
               <h3 className="text-2xl font-bold text-international-orange-600 pt-10 pb-3">
                 Contact Us
               </h3>
-              <section className="border-4 border-dotted border-white w-2/3 p-4 m-6">
+              <section className=" w-2/3 p-4 m-6">
                 <h2 className="text-lg font-bold text-international-orange-600 ">
                   {" "}
                   Email: <span className="italic gap-6 text-white">alumni@connect.com</span>
@@ -56,8 +60,54 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center gap-36 ">
-            <button onClick="location.href='https://www.figma.com/file/E1KDbHrfuEa9ZBuyl1948f/Alumni-Community-System?node-id=0%3A1&t=2ctp83oBGQiqBpfh-0'">
+                  <div className="flex justify-center items-center gap-20 ">
+                  <a href="https://www.instagram.com/moringaschool/">
+                  <img
+            src={Insta}
+            className="border rounded-2xl ml-7"
+            alt="logo"
+            width={25}
+            height={25}
+                      />
+                      </a>
+                      
+                      <a href="https://www.linkedin.com/school/moringa-school/?originalSubdomain=ke">
+                                    
+                      <img
+            src={Linkedin}
+            className="border rounded-2xl ml-7"
+            alt="logo"
+            width={25}
+            height={25}
+                      />
+      </a>
+              
+      <a href="https://twitter.com/moringaschool" >
+      <img
+            src={Twitter}
+            className="border rounded-2xl ml-7"
+            alt="logo"
+            width={25}
+            height={25}
+                      />
+      </a> 
+                      
+    
+
+<a href="https://www.facebook.com/moringaschool/" >
+<img
+            src={Facebook}
+            className="border rounded-2xl ml-7"
+            alt="logo"
+            width={30}
+            height={30}
+                      />
+      </a>
+                      
+          
+                      
+
+            {/* <button >
               <FaFacebookSquare />
             </button>
             <button>
@@ -69,13 +119,15 @@ function Footer() {
             <button>
               <FaLinkedinIn />
             </button>
-          </div>
+          </div> */}
           <span className="pb-20 text-lg text-international-orange-600">
             {" "}
             Alumni Connect
           </span>
-        </div>
-      </Element>
+                  </div>
+                  </div>
+          </Element>
+         
     </>
   );
 }
