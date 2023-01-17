@@ -37,7 +37,7 @@ function AdminAnnouncementsDashboard() {
         </div>
       </div>
       <div>
-        <div className="w-1/2 absolute top-0 left-45 right-20">
+        <div className="w-1/2 absolute top-0 left-45 right-20 bg-[#242740]">
           <h1 className="font-bold text-2xl">Posts</h1> <br />
           <br />
           <table className="border-collapse:collapse;">
