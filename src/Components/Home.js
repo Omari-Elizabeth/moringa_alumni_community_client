@@ -11,10 +11,10 @@ function Home() {
       >
         <Navigation />
         <div className="items-center ">
-          <h1 className="text-international-orange-600 pt-36 text-6xl font-anton">
+          <h1 className="text-black hover:text-international-orange-600 pt-36 font-semibold text-6xl font-anton">
             NETWORK TO BUILD
-          </h1>
-          <p className="text-black text-xl pt-30 pb-96">
+          </h1> <br></br>
+          <p className="text-black text-2xl font-light pt-30 pb-96">
                       Facilitate engagement to achieve engagement by
                       establishing a spirit of comraderary <br></br>
                       among various personnel therefore knowing your 
