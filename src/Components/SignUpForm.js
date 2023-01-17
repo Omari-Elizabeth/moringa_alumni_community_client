@@ -48,7 +48,7 @@ function SignUp({ user, updateUser }) {
     <section className="min-h-full">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-3 p-3 mx-6 rounded-3xl border-solid border-white border-2 w-full md:w-2/4 md:m-auto md:bg-cloud-burst-600 mt-20 "
+        className="flex flex-col gap-3 p-3 mx-6 rounded-3xl border-solid border-white border-2 w-full md:w-2/4 md:m-auto md:bg-cloud-burst-600 md:mt-20 "
         style={{ height: "80vh" }}
       >
         <div className="m-auto ">
