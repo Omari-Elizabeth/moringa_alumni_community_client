@@ -76,7 +76,7 @@ function AdminLogin( { admin , setAdmin }){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto'/>
+                <input type="submit" className='rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border m-auto'/>
 
                 <div className='flex justify-center gap-5'>
                     <h3> <Link to='/home'>Return To<span className='text-international-orange-600 font-bold'> Home</span> </Link> </h3>
