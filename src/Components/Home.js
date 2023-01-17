@@ -15,11 +15,10 @@ function Home() {
             NETWORK TO BUILD
           </h1>
           <p className="text-black text-xl pt-30 pb-96">
-            Many graduates struggle with getting opportunities for work and
-            mentorship while<br></br>
-            others have opportunities they want to share with their fellow
-            former students and<br></br>
-            often have no platform to do that.
+                      Facilitate engagement to achieve engagement by
+                      establishing a spirit of comraderary <br></br>
+                      among various personnel therefore knowing your 
+                      members' unique needs.
           </p>
         </div>
       </div>
