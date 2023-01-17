@@ -45,11 +45,10 @@ function SignUp({ user, updateUser }) {
   }
 
   return (
-    <section className="min-h-full">
+    <section className="min-h-full p-5">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-3 p-3 mx-6 rounded-3xl border-solid border-white border-2 w-full md:w-2/4 md:m-auto md:bg-cloud-burst-600 md:mt-20 "
-        style={{ height: "80vh" }}
+        className="flex flex-col gap-3  rounded-3xl border-solid border-international-orange-600 md:border-white border-2 w-full md:w-2/4  m-auto  md:bg-cloud-burst-600 mt-20  " style={{ height: "80vh" }}
       >
         <div className="m-auto ">
           <img
@@ -95,7 +94,7 @@ function SignUp({ user, updateUser }) {
           className="rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border  m-auto"
         />
 
-        <div className="flex justify-center gap-5 text-black text-sm md:text-white md:text-lg">
+        <div className="flex justify-center pb-10 gap-5 text-black text-sm md:text-white md:text-lg ">
           <h3>
             {" "}
             Have an Account?{" "}
