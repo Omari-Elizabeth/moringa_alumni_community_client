@@ -7,6 +7,8 @@ import MainDisplay from './Components/MainDisplay';
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
+import AnnouncementList from './Components/Announcements';
+
 import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 import AdminPostsDashboard from './Components/AdminPostsDashboard'
 import AdminUsersDashboard from './Components/AdminUsersDashboard'
@@ -115,6 +117,10 @@ function App() {
 
       <Route path="/alum_home">
           <MainAlumView  user={user} setUser={setUser} login_token={login_token} user_id={user_id} />
+      </Route>
+
+      <Route path="/announcements">
+        <AnnouncementList />
       </Route>
 
 
