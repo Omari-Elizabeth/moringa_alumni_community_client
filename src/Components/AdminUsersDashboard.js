@@ -62,9 +62,9 @@ function AdminUsersDashboard() {
         <div className="absolute inset-y-0 right-20">
           <h1 className="font-bold text-2xl">Users</h1> <br />
           <br />
-          <table className="border-collapse:collapse;">
+          <table className="bg-[#242747] border-collapse:collapse;">
             <thead>
-              <tr className="bg-blue-50">
+              <tr className="bg-[#242747]">
                 <th className="border p-2 ">User ID</th>
                 <th className="border p-2 ">Username</th>
                 <th className="border p-2">Cohort</th>
