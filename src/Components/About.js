@@ -14,12 +14,12 @@ const About = () => {
           <p className="pt-4 pb-36 p-2">Our vision is one that strives to connect our Alumni to the future
             they envision for themselves.
             </p>
-            <Footer />
+         
           </div>
          
         </div>
       </div>
-     
+      <Footer />
     </>
   );
 };
