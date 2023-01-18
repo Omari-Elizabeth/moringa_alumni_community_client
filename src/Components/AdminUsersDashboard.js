@@ -11,7 +11,6 @@ function AdminUsersDashboard() {
         setUsers(jsonfile);
       });
   }, [apiUrl, deleteuser]);
-
   function deleteUser(id) {
     // console.log(id);
     fetch(`/users/${id}`, {
@@ -37,7 +36,10 @@ function AdminUsersDashboard() {
   }
   return (
     <>
-      <div className="relative h-screen w-60 bg-[#242772]">
+    <div className="flex">
+      {/* <div className="h-screen w-60 bg-[#242772]"> */}
+        <aside className="bg-[#272747] p-10 h-screen">
+        {/* </aside> */}
         <h2 className="text-sky-50">Admin Dashboard</h2>
         <div>
           <br />
@@ -57,9 +59,10 @@ function AdminUsersDashboard() {
             </p>
           </div>
         </div>
-      </div>
+        </aside>
+      {/* </div> */}
       <div>
-        <div className="absolute inset-y-0 right-20">
+        <div className="ml-96 ">
           <h1 className="font-bold text-2xl">Users</h1> <br />
           <br />
           <table className="bg-[#242747] border-collapse:collapse;">
@@ -87,7 +90,6 @@ function AdminUsersDashboard() {
                       >
                         Delete
                       </button>
-
                       <button
                         title="Delete"
                         data-toggle="tooltip"
@@ -104,8 +106,8 @@ function AdminUsersDashboard() {
           </table>
         </div>
       </div>
+     </div>
     </>
   );
 }
-
 export default AdminUsersDashboard;
