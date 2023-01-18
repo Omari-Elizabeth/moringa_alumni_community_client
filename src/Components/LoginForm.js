@@ -21,7 +21,6 @@ function Login( { user, updateUser }){
         .then(r => {
             if(r.ok){
                 r.json().then(d => {
-                    console.log(d)
 
                     // Create a Login Token 
                     localStorage.setItem("login_token", d.token);

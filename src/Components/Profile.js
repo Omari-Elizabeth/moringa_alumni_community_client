@@ -17,8 +17,8 @@ function Profile( { user , setUser }){
 
     function DisplayProfile(){
         return (
-            <>
-                <div className="text-left">
+            <div>
+                <div className="text-left p-5 text-slate-300 border flex flex-col gap-3">
                 <h2>Your Profile</h2>
                 <div>
                     <img src={avatar} alt="" />
@@ -27,9 +27,9 @@ function Profile( { user , setUser }){
                     <h4>{profession}</h4>
                     <h4>{gender}</h4>
                     <h4>{cohort}</h4>
-                    <button onClick={signOut} className="border rounded-lg p-1 font-bold border-slate-800 bg-red-700 hover:bg-slate-500 hover:text-white">Log Out</button>
+                    <button onClick={signOut} className=" bg-red-600 p-2 border rounded-lg hover:bg-slate-500 hover:text-white">Log Out</button>
                 </div>
-            </>
+            </div>
         )
     }
 
@@ -44,13 +44,15 @@ function Profile( { user , setUser }){
     }
 
     useEffect(() => {
-        
+
     },[user])
 
     return(
-        <div className="min-h-screen min-w-screen font-semibold bg-slate-700">
-            { user.profile ?  <DisplayProfile /> :  <NoProfile /> }
-        </div>
+        <section >
+            <div className="min-w-screen font-semibold bg-slate-700 border rounded-md">
+                { user.profile ?  <DisplayProfile /> :  <NoProfile /> }
+            </div>
+        </section>
     )
 }
 

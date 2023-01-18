@@ -14,14 +14,9 @@ function MainAlumView( { user , setUser , login_token, user_id }){
 
 function AlumNavigation(){
 
-    // function signOut(){
-    //     setUser(null)        
-    //     localStorage.clear()
-    // }
-
     return(
         <div className="flex gap-3 justify-center items-center">
-            <h1 className="p-2">Hello {user.username} ! </h1>
+            <h1 className="p-2 font-extrabold text-2xl animate-pulse">Hello {user.username} ! </h1>
         </div>
     )
 }
@@ -32,10 +27,10 @@ function LoggedDisplay(){
         <div className="min-h-screen p-6 flex flex-col justify-center text-left">
         <div>
             <AlumNavigation />
-            <div className="grid grid-cols-3 gap-5 items-start">
-            <Profile user={user} setUser={setUser} />
-            <PostList login_token={login_token} user_id={user_id}/>
-            <AnnouncementList />
+            <div className="grid grid-flow-col  gap-5 items-start">
+                <Profile user={user} setUser={setUser} />
+                <PostList login_token={login_token} user_id={user_id}/>
+                <AnnouncementList />
             </div>
         </div>        
      
