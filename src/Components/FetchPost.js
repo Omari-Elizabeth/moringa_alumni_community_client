@@ -12,6 +12,7 @@ function SinglePostPage(){
     const { title, content, likes, comments , image } = post ; 
 
     console.log(comments); 
+    console.log(likes)
 
     useEffect(() => {
 

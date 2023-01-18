@@ -1,13 +1,10 @@
 // Profile Page 
 
-import { useEffect } from "react";
-
 function Profile( { user , setUser }){
-   
-    const { fname, lname, gender, cohort, profession , avatar  } = user.profile;
-
     console.log(user); 
-    console.log(user.profile)
+ 
+    const { fname, lname, gender, cohort, profession , avatar  } = user.profile;
+    
         
     function signOut(){
         localStorage.clear(); 
@@ -33,24 +30,11 @@ function Profile( { user , setUser }){
         )
     }
 
-    function NoProfile(){
-        return(
-            <>
-                <div>
-                    <h1> No Profile To Display! </h1>
-                </div>
-            </>
-        )
-    }
-
-    useEffect(() => {
-
-    },[user])
-
+   
     return(
         <section >
             <div className="min-w-screen font-semibold bg-slate-700 border rounded-md">
-                { user.profile ?  <DisplayProfile /> :  <NoProfile /> }
+                <DisplayProfile />
             </div>
         </section>
     )

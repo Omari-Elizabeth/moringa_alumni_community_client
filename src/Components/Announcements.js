@@ -39,13 +39,12 @@ function AnnouncementList(){
         fetch('/announcements')
         .then(r => r.json())
         .then(d => {
-            console.log(d)
             setAnnouncements(d)
         }); 
     },[])
 
     return(
-        <div className='bg-slate-700 text-slate-300 border rounded-md'>
+        <div className='bg-slate-700 min-w-screen text-slate-300 border rounded-md'>
             {announcements.length <= 0 ? <NoAnnouncements /> :  <AllAnnouncements /> }
         </div>
     )
