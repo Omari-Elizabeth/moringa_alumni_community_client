@@ -1,7 +1,7 @@
 // All the User Views Are Nested Here After the User is Logged In 
 // import { Redirect } from "react-router-dom";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Link } from "react-router-dom"
 
 import PostList from "./PostList";
@@ -14,15 +14,14 @@ function MainAlumView( { user , setUser , login_token, user_id }){
 
 function AlumNavigation(){
 
-    function signOut(){
-        setUser(null)        
-        localStorage.clear()
-    }
+    // function signOut(){
+    //     setUser(null)        
+    //     localStorage.clear()
+    // }
 
     return(
         <div className="flex gap-3 justify-center items-center">
             <h1 className="p-2">Hello {user.username} ! </h1>
-            <button onClick={signOut} className="border rounded-lg p-1 font-bold border-slate-800 bg-red-700 hover:bg-slate-500 hover:text-white">Log Out</button>
         </div>
     )
 }
@@ -30,11 +29,11 @@ function AlumNavigation(){
 
 function LoggedDisplay(){
     return (
-        <div className="min-h-screen p-6 flex flex-col justify-center ">
+        <div className="min-h-screen p-6 flex flex-col justify-center text-left">
         <div>
             <AlumNavigation />
             <div className="grid grid-cols-3 gap-5 items-start">
-            <Profile user={user} />
+            <Profile user={user} setUser={setUser} />
             <PostList login_token={login_token} user_id={user_id}/>
             <AnnouncementList />
             </div>
@@ -52,13 +51,7 @@ function UnloggedDisplay(){
         </div>
     )
 }
-    console.log(user); 
 
-
-    useEffect(() => {
-
-    },[user])
-       
     return (
         <div className="bg-slate-300 text-black min-h-screen font-mono">
             {user ? <LoggedDisplay /> : <UnloggedDisplay /> }

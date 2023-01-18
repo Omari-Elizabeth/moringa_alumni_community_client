@@ -11,7 +11,6 @@ function PostList(){
     fetch('/posts')
     .then(r => r.json())
     .then(d => {
-        // console.log(d)
         setPosts(d);
     })
    },[]); 
