@@ -16,6 +16,25 @@ function AnnouncementList(){
         )
     } )
 
+    function NoAnnouncements(){
+        return(
+            <div>
+                <h1> No Announcements !</h1>
+            </div>
+        )
+    }
+
+    function AllAnnouncements(){
+        return(
+            <div>
+                <h1>Announcements : </h1>
+                <section>
+                    {displayAnnouncements}
+                </section>
+            </div>
+        )
+    }
+
     useEffect(() => {
         fetch('/announcements')
         .then(r => r.json())
@@ -26,8 +45,8 @@ function AnnouncementList(){
     },[])
 
     return(
-        <div>
-            {displayAnnouncements}
+        <div className='min-h-screen'>
+            {announcements.length <= 0 ? <NoAnnouncements /> :  <AllAnnouncements /> }
         </div>
     )
 }
