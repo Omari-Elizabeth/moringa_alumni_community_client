@@ -17,12 +17,12 @@ function Footer() {
     <>
       <Element id="footer" name="footer">
         <div className="bg-cloud-burst-600 w-full px-28 "  style={{ height: "80vh" }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 pb-19 gap-8 ">
+          <div className="grid grid-cols-1 md:flex pb-19 gap-8 ">
             <div className=" w-1/2 ">
               <h3 className="text-2xl font-bold text-international-orange-600 pt-10 pb-3">
                 Contact Us
               </h3>
-              <section className=" w-2/3 p-4 m-6">
+              <section className="w-full md:w-2/3 p-4 m-6  items-center">
                 <h2 className="text-lg font-bold text-international-orange-600 ">
                   {" "}
                   Email: <span className="italic gap-6 text-white">alumni@connect.com</span>
@@ -45,7 +45,7 @@ function Footer() {
               <h3 className=" pt-8 pb-8  text-2xl font-bold text-international-orange-600 ">
                 Location
               </h3>
-              <div>
+              <div className="w-full md:w-2/3">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15955.16244016024!2d36.7846067!3d-1.3004862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x940b62a3c8efde4c!2sMoringa%20School!5e0!3m2!1sen!2ske!4v1673513978283!5m2!1sen!2ske"
                   title="google-map"
