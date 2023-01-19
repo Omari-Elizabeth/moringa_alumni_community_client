@@ -5,17 +5,17 @@ function AddAnnouncementForm({ setChange }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const announcement = {
-      title: title,
-      content: content,
-    };
+
+    const formData = new FormData()
+
+    formData.append("title", title)
+    formData.append("content", content)
+    formData.append("announcement_image", e.target.image.files[0])
+
 
     fetch("/announcements", {
       method: "POST",
-      body: JSON.stringify(announcement),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -36,10 +36,10 @@ function AddAnnouncementForm({ setChange }) {
         <h1 className="text-orange-500 p-5">Add Announcement</h1>
         <label className="text-white center p-10">Title</label>
         <input
+          // id="title"
           type="text"
-          value={title}
           onChange={(e) => {
-            setTitle(e.target.value);
+            setTitle(e.target.value)
           }}
           placeholder="Enter Title"
         />
@@ -58,12 +58,11 @@ function AddAnnouncementForm({ setChange }) {
         <label className="text-white text-right">Image URl</label>
         <input
           type="file"
-          // onChange={(e) => setUrl(e.target.value)}
-          placeholder="url"
+          id="image"
         />
         <br />
         <br />
-        <button className="bg-[#FF731D] font-bold ml-20  w-20 text-white hover:bg-cyan-600">
+        <button type="submit" className="bg-[#FF731D] font-bold ml-20  w-20 text-white hover:bg-cyan-600">
 
           Add
         </button>
