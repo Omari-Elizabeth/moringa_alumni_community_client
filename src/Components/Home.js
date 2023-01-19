@@ -5,7 +5,7 @@ import Footer from "./Footer.js";
 function Home() {
   return (
     <>
-      <div className="bg-home-image  bg-cover"style={{ height: "100vh" }}>
+      <div className="bg-home-image  bg-cover"style={{ height: "100vh" }} >
         <Navigation />
         <div className=" flex flex-col items-center ">
           <h1 className="text-international-orange-600 hover:text-black pt-36 font-semibold text-3xl md:text-6xl font-anton">

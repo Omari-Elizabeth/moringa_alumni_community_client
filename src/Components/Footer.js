@@ -17,9 +17,9 @@ function Footer() {
     <>
       <Element id="footer" name="footer">
         <div className="bg-cloud-burst-600 w-full px-28 "  style={{ height: "80vh" }}>
-          <div className="grid grid-cols-1 md:flex pb-19 gap-8 ">
+          <div className="grid grid-cols-1 md:flex md:pb-19 md:gap-40 ">
             <div className=" w-1/2 ">
-              <h3 className="text-2xl font-bold text-international-orange-600 pt-10 pb-3">
+              <h3 className="md:text-2xl text-lg font-bold text-international-orange-600 md:pt-10 pb-3">
                 Contact Us
               </h3>
               <section className="w-full md:w-2/3 p-4 m-6  items-center">
@@ -42,10 +42,10 @@ function Footer() {
               </section>
             </div>
             <div>
-              <h3 className=" pt-8 pb-8  text-2xl font-bold text-international-orange-600 ">
+              <h3 className=" md:pt-8 md:pb-8  text-2xl font-bold text-international-orange-600 ">
                 Location
               </h3>
-              <div className="w-full md:w-2/3">
+              <div className="w-full md:w-2/3 justify-center items-center bg-black">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15955.16244016024!2d36.7846067!3d-1.3004862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x940b62a3c8efde4c!2sMoringa%20School!5e0!3m2!1sen!2ske!4v1673513978283!5m2!1sen!2ske"
                   title="google-map"

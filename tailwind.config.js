@@ -44,7 +44,7 @@ module.exports = {
       },
       backgroundImage: {
         'home-image': "url('/src/img/ho.png')",
-        'about-image': "url('/src/img/about.png')"
+        'about-image': "url('/src/img/about.jpg')"
        
       },
       fontFamily: {

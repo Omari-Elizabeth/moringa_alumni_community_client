@@ -57,12 +57,12 @@ function SignUp({ user, setUser }) {
     }, [isSignedUp])
     return (
         <section className="min-h-full">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-2">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3  rounded-3xl border-solid border-international-orange-600 md:border-white border-2 w-full md:w-2/4  m-auto  md:bg-cloud-burst-600 mt-20  " style={{ height: "80vh" }}>
                 <div className="m-auto ">
                     <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
                 </div>
                 <h1 className="text-xl  text-international-orange-600 font-bold" >SIGN UP</h1>
-                <label className="text-white text-lg">
+                <label className="text-black text-sm md:text-white md:text-lg">
                     Username
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-6/12"
@@ -72,7 +72,7 @@ function SignUp({ user, setUser }) {
                         required
                     />
                 </label>
-                <label className="text-white text-lg">
+                <label className="text-black text-sm md:text-white md:text-lg">
                     Password
                     <input type="password"
                         className="text-black p-2 m-2 border rounded-3xl w-6/12"
@@ -81,7 +81,7 @@ function SignUp({ user, setUser }) {
                         placeholder="Enter Password (minimum 4 characters)"
                         required />
                 </label>
-                <label className="text-white text-lg">
+                <label className="text-black text-sm md:text-white md:text-lg">
                     Confirm Password
                     <input type="password"
                         className="text-black p-2 m-2 border rounded-3xl w-6/12"
@@ -91,15 +91,15 @@ function SignUp({ user, setUser }) {
                         required />
                 </label>
                 <input type="submit" className=' text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-center gap-5  pb-10 text-black text-sm md:text-white md:text-lg'">
                     <h3> Have an Account? <Link to='/login' className="text-international-orange-600"> Log In </Link> </h3>
                     <h3> <Link to='/home'>Return To <span className="text-international-orange-600 font-bold"> Home</span></Link> </h3>
                 </div>
             </form>
-            <div className="flex justify-center gap-5">
+            {/* <div className="flex justify-center gap-5">
                 <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
                 <h3> <Link to='/home'>Return To Home</Link> </h3>
-            </div>
+            </div> */}
             <div className="text-red-600 font-bold text-xl p-3">
                 {errors.length > 0 && (
                     <div>
