@@ -52,7 +52,10 @@ function SignUp({ user, setUser }) {
                 } else {
                     r.json().then((e) => {
                         console.log(e)
-                        setErrors(errors => [...errors, e.message])
+                        // setErrors(errors => [...errors, e.message])
+                        setErrors(errors => [...errors, e.errors[0]])
+                        // console.log(e.errors[0])
+                        console.log(errors)
                     })
                 }
             })
