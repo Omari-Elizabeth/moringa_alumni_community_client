@@ -1,7 +1,7 @@
 //  Sign Up Form 
 import { useState, useEffect } from "react";
 import Logo from "../img/formlogo.png"
-import { Link, Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 function SignUp({ user, setUser }) {
@@ -14,8 +14,6 @@ function SignUp({ user, setUser }) {
     });
 
     const [errors, setErrors] = useState([]);
-    const [isSignedUp, setIsSignedUp] = useState(false);
-
 
     function handleSignupData(e) {
 
@@ -45,9 +43,16 @@ function SignUp({ user, setUser }) {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(() => {
-                        setIsSignedUp(true);
-                      alert("Signup successful,proceed to Login")
+                    r.json().then((d) => {
+                        console.log(d, "<= everything returned from the server")
+                        // This will save the token in localStorage to be used in an Authentication Header in future requests.
+                        localStorage.setItem("login_token", d.token);
+                        localStorage.setItem("user_id", d.id);               
+                        setUser(d.user);
+                        alert("Signup successful,You re being redirected to your account")
+                        return <Redirect to="/alum_home"/>
+                        // setIsSignedUp(true);
+                        // alert("Signup successful,proceed to Login")
                         //  return<Redirect to="/login" />;
                     })
                 } else {
@@ -61,12 +66,6 @@ function SignUp({ user, setUser }) {
                 }
             })
     }
-
-    useEffect(() => {
-        if (isSignedUp) {
-            return <Redirect to='/login' />;
-        }
-    }, [])
 
     return (
         <section className="min-h-full">
@@ -97,7 +96,8 @@ function SignUp({ user, setUser }) {
                         name="password"
                         onChange={(e) => handleSignupData(e)}
                         placeholder="Enter Password (minimum 4 characters)"
-                        required />
+                        // required 
+                        />
 
                 </label>
                 <label className="text-white text-lg">
@@ -128,14 +128,14 @@ function SignUp({ user, setUser }) {
                 {errors.length > 0 && (
                     <div>
                         {errors.map((error, index) => (
-                            <p key={index}>{error}</p>
+                            <p key={index}>{`* ${error}`}</p>
                         ))}
                     </div>
                 )}
                 {/* <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3> */}
             </div>
 
-            {/* {user ? <Redirect to="/alum_home" /> : <Redirect to="/signup" />} */}
+            {user ? <Redirect to="/alum_home" /> : <Redirect to="/signup" />}
         </section>
     )
 
