@@ -21,6 +21,7 @@ function SignUp( { user , setUser }){
 
     function handleSubmit(e){
         e.preventDefault()
+    
  
         fetch('/users', {
             method : "POST", 
