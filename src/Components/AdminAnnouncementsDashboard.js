@@ -78,7 +78,7 @@ function AdminAnnouncementsDashboard() {
                   >
                     Delete
                   </button>
-                <h2 className="text-blue-500 bg-orange-200 mb-10">
+                <h2 className="text-orange-600 font-bold mb-10">
                   {announcements.title}
                 </h2>
               
