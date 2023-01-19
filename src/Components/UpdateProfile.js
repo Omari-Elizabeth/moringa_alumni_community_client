@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import Logo from "../img/formlogo.png"
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 
 const UpdateProfile = () => {
@@ -14,13 +14,15 @@ const UpdateProfile = () => {
     const [cohort, setCohort] = useState("");
     const [birthday, setBirthday] = useState("");
     const [profession, setProfession] = useState("");
-    const [user_id,setUserid]=useState(userId)
+    const [user_id, setUserid] = useState(userId)
     console.log(user_id)
+
+    const [errors, setErrors] = useState([]);
 
     function handleSubmit(e) {
 
         e.preventDefault()
-
+        setErrors([]);
         const formData = new FormData()
         formData.append("fname", fname)
         formData.append("lname", lname)
@@ -30,21 +32,34 @@ const UpdateProfile = () => {
         formData.append("profession", profession)
         formData.append("user_id", user_id)
         formData.append("avatar", e.target.image.files[0])
-        
+
 
         fetch("/profiles", {
             method: "POST",
             body: formData,
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
 
+            .then(r => {
+                if (r.ok) {
+                    r.json().then((d) => {
+                        console.log(d, "<= everything returned from the server")
+
+                        alert("Profile successfully updated ")
+                        return <Redirect to="/alum_home" />
+
+                    })
+                } else {
+                    r.json().then((e) => {
+                        console.log(e.errors.length)
+                        let allErrors = e.errors
+                        for (let i = 0; i < allErrors.length; i++) {
+                            console.log(allErrors[i])
+                        setErrors(errors => [...errors, allErrors[i]])
+                           
+                        }
+                    })
+                }
             })
-            .catch((err) => {
-                console.log(err.message);
-            });
-        // setChange(true)
         setFName("")
         setLName("")
         setGender("")
@@ -70,8 +85,8 @@ const UpdateProfile = () => {
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
                         value={userId}
                         id="user_id"
-                       
-                       />
+
+                    />
                 </label>
                 <label className="text-white text-lg" >
                     First Name
@@ -110,7 +125,7 @@ const UpdateProfile = () => {
                         onChange={(e) => {
                             setCohort(e.target.value)
                         }}
-                        placeholder="Enter your cohort" />
+                        placeholder="must include sd or ds" />
                 </label>
 
                 <label className="text-white text-lg">
@@ -144,6 +159,17 @@ const UpdateProfile = () => {
 
                 <input type="submit" value="UPDATE" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
                 <Link to="/alum_home">Home</Link>
+
+                <div className="text-red-600 font-bold text-xl p-3">
+                    {errors.length > 0 && (
+                        <div>
+                            {errors.map((error, index) => (
+                                <p key={index}>{`* ${error}`}</p>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
             </form>
 
 
