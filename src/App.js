@@ -16,6 +16,7 @@ import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboar
 import AdminPostsDashboard from './Components/AdminPostsDashboard'
 import AdminUsersDashboard from './Components/AdminUsersDashboard'
 import AdminLogin from './Components/AdminLogin';
+import UpdateProfile from './Components/UpdateProfile';
 
 // Alum Components : 
 import MainAlumView from './Components/MainAlumniView';
@@ -116,6 +117,10 @@ function App() {
 
       <Route path={`/posts/:id`}>
         <SinglePostPage />
+      </Route>
+
+      <Route path="/update_profile">
+        <UpdateProfile />
       </Route>
 
   

@@ -2,16 +2,15 @@
 // import { Redirect } from "react-router-dom";
 
 // import { useEffect } from "react";
+import { useEffect , useState  } from "react";
 import { Link } from "react-router-dom"
 
 import PostList from "./PostList";
 import Profile from './Profile';
 import AnnouncementList from './Announcements';
-import { useEffect } from "react";
 
 
 function MainAlumView( { user , setUser , login_token, user_id }){
-
 
     function AlumNavigation(){
 
@@ -24,6 +23,7 @@ function MainAlumView( { user , setUser , login_token, user_id }){
         
 
     function LoggedDisplay(){
+
         return (
             <div className="min-h-screen min-w-screen p-3 flex flex-col justify-center text-left">
             <div>
@@ -47,10 +47,10 @@ function MainAlumView( { user , setUser , login_token, user_id }){
             </div>
         )
     }
-
+    
     useEffect(() => {
-
-    },[user]); 
+        
+    },[user, login_token ]); 
 
     return (
         <div className="bg-slate-300 text-black min-h-screen min-w-screen font-mono">
