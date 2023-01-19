@@ -5,33 +5,37 @@ import Post from './Post';
 function AddNewPost(){
     const [ postContent, setPostContent ] = useState(""); 
     const [ postTitle, setPostTitle ] = useState("")
-    const [ postImage, setPostImage ] = useState(null);
 
     const user_id = localStorage.getItem("user_id"); 
     const login_token = localStorage.getItem("login_token"); 
 
-    const postData = {
-        title : postTitle, 
-        likes : 0, 
-        content : postContent, 
-        user_id : user_id,
-        image : postImage
-    }
 
     function postNewToDb(e){
         e.preventDefault()
 
-        console.log(postData);
+        const formData = new FormData(); 
+
+        formData.append("title", postTitle)
+        formData.append('content', postContent)
+        formData.append('likes', 0)
+        formData.append('user_id', user_id)
+        formData.append("image", e.target.image.files[0])
+
         
         fetch("/posts", {
             method : 'POST', 
-            headers : { "Content-Type" : "application/json"},
             Authorize : `Bearer ${login_token}`,
-            body : JSON.stringify(postData)
+            body : formData
         })
         .then(r => r.json())
         .then(d => console.log(d))
         .catch(e => console.log(e))
+
+        setPostContent("");
+        setPostTitle("");
+
+        console.log(e.target.image.files)
+        e.target.image.files = null ;
 
     }
 
@@ -41,7 +45,7 @@ function AddNewPost(){
             <form className='flex flex-col mb-2 w-full gap-4' onSubmit={postNewToDb}>
                  <input type="text" placeholder='Post Title' value={postTitle} onChange={(e) => setPostTitle(e.target.value)} className="p-2 border rounded-md"/>
                  <input type="textarea" placeholder="Post Content" value={postContent} onChange={(e) => setPostContent(e.target.value)} className="p-2 border rounded-md"/>
-                <input type="file" onChange={(e) => setPostImage(e.target.image[0])}/>
+                <input type="file"  id="image" accept="image/png , image/jpeg, image/jpg"/>
                 <input type="submit"/>
             </form>
         </div>

@@ -1,5 +1,5 @@
 //  Sign Up Form 
-import { useState, useEffect } from "react";
+import { useState  } from "react";
 import Logo from "../img/formlogo.png"
 import { Link, Redirect } from 'react-router-dom';
 
