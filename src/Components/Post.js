@@ -14,8 +14,6 @@ function Post( { post }){
     const login_token = localStorage.getItem("login_token");
     const user_id = localStorage.getItem("user_id");
 
-    console.log(login_token , "<= this is the login_token"); 
-    console.log(user_id, "<= this is the user_id"); 
    
     function postCommentToDb(e){
         e.preventDefault(); 
@@ -26,11 +24,9 @@ function Post( { post }){
             comment_msg : newComment
         }
 
-        console.log(sendData, "<= this is the Data sent "); 
-
         fetch(`/comments`,{
             method : 'POST', 
-            "Content-Type" : "application/json",
+            headers : {"Content-Type" : "application/json"},
             Authorize : `Bearer ${login_token}`,
             body : JSON.stringify(sendData)
         })
