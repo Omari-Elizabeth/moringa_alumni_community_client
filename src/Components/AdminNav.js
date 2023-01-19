@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 function AdminNavigation(){
 
     return(    
-        <div>
-            <Link to="/admindashboard/announcements">AdminAnnouncementsDashboard</Link>
+        <div className="flex gap-3 justify-center items-center">
+            <Link to="/admin_announcements">AdminAnnouncementsDashboard</Link>
             <Link to="/admindashboard/users">AdminUsersDashboard</Link>
             <Link to="/admindashboard/posts">AdminPostsDashboard</Link>
         </div>
