@@ -43,13 +43,13 @@ module.exports = {
       }
       },
       backgroundImage: {
-        'home-image': "url('/src/img/hom.png')",
-        'about-image': "url('/src/img/about.png')",
+        'home-image': "url('/src/img/ho.png')",
+        'about-image': "url('/src/img/about.png')"
+       
       },
       fontFamily: {
-        'sans': 'IM FELL French Canon'
-    
-        
+        'sans': "'Maven Pro', sans-serif;",
+        'anton':"'Anton', sans-serif;"
       }
       },
     },

@@ -9,13 +9,12 @@ function PostList(){
     fetch('/posts')
     .then(r => r.json())
     .then(d => {
-        console.log(d)
         setPosts(d);
     })
    },[]); 
 
     return(
-        <div>
+        <div className='divide-y-4 divide-emerald-500'>
             {
                 posts.map((post) => {
                     return <Post post={post} key={post.id} />
@@ -23,6 +22,7 @@ function PostList(){
             }
 
         </div>
+
     )
 }
 

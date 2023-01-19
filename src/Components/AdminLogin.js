@@ -49,12 +49,12 @@ function AdminLogin( { admin , setAdmin }){
         } )
     }
     return (
-            <div className='p-3'> 
-            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-2 h-full">
+            <div className='p-5'> 
+            <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-3 rounded-3xl p-3 border-international-orange-600  border-solid md:border-white border-2 w-2/4 m-auto md:bg-cloud-burst-600 mt-8 h-full" style={{ height: "80vh" }}>
             <div className="m-auto ">
                 <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
                 </div>
-            <label className="text-white text-lg">
+            <label className="text-black text-sm md:text-white md:text-lg">
                     Username 
                 <input type="text" 
                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
@@ -65,7 +65,7 @@ function AdminLogin( { admin , setAdmin }){
                         placeholder="Pick a username"/> 
                 </label>
 
-                <label className="text-white text-lg">
+                <label className="text-black text-sm md:text-white md:text-lg">
                     Password 
                     <input type="password" 
                     className="text-black p-2 m-2 border rounded-lg w-6/12" 
@@ -76,9 +76,9 @@ function AdminLogin( { admin , setAdmin }){
                         placeholder="Enter Password (minimum 4 characters)"/>
                 </label>
 
-                <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto'/>
+                <input type="submit" className='rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white  w-20 md:w-40 p-3 border m-auto'/>
 
-                <div className='flex justify-center gap-5'>
+                <div className='flex justify-center gap-5 text-black text-sm md:text-white md:text-lg'>
                     <h3> <Link to='/home'>Return To<span className='text-international-orange-600 font-bold'> Home</span> </Link> </h3>
                 </div>
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Logo from "../img/formlogo.png"
 import { Link, Redirect} from 'react-router-dom';
 
+
 function SignUp({ user, setUser }) {
 
     const [signupData, setSignupData] = useState({
@@ -71,6 +72,7 @@ function SignUp({ user, setUser }) {
         <section className="min-h-full">
             <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-3 border-solid border-white border-2 w-2/4 m-auto bg-cloud-burst-600 mt-2">
 
+
                 <div className="m-auto ">
                     <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
                 </div>
@@ -136,6 +138,7 @@ function SignUp({ user, setUser }) {
             {/* {user ? <Redirect to="/alum_home" /> : <Redirect to="/signup" />} */}
         </section>
     )
+
 }
 
 export default SignUp;

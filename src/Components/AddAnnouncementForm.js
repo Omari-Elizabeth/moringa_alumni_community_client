@@ -25,7 +25,7 @@ function AddAnnouncementForm({ setChange }) {
       .catch((err) => {
         console.log(err.message);
       });
-      setChange(false)
+      setChange(true)
       setContent('');
       setTitle('');
    
@@ -54,6 +54,7 @@ function AddAnnouncementForm({ setChange }) {
         />
 
         <br />
+
         <label className="text-white text-right">Image URl</label>
         <input
           type="file"
@@ -63,6 +64,7 @@ function AddAnnouncementForm({ setChange }) {
         <br />
         <br />
         <button className="bg-[#FF731D] font-bold ml-20  w-20 text-white hover:bg-cyan-600">
+
           Add
         </button>
       </form>
