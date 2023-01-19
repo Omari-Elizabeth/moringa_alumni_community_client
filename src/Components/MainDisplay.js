@@ -47,6 +47,7 @@ export function Navigation() {
       </div>
     </>
   );
+
 }
 
 function MainDisplay() {

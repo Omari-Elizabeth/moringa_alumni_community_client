@@ -21,7 +21,6 @@ function Login( { user, updateUser }){
         .then(r => {
             if(r.ok){
                 r.json().then(d => {
-                    console.log(d)
 
                     // Create a Login Token 
                     localStorage.setItem("login_token", d.token);
@@ -36,9 +35,6 @@ function Login( { user, updateUser }){
                 r.json().then((e) => {
                     setHideError(false);
                     setErrorMessage(e.error);
-
-                    // setHideError(true);
-                    // setErrorMessage("");
                 })
             } 
         })
@@ -74,8 +70,8 @@ function Login( { user, updateUser }){
                         }}
                         placeholder="Enter Password(min 4characters)"/>
                 </label>
-
                 <input type="submit" className='rounded-full text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-20 md:w-40 p-3 m-auto' />
+
 
                 <div className='flex justify-center gap-5  pb-10 text-black text-sm md:text-white md:text-lg'>
                     <h3>Don't have an Account ? <Link to="/signup" className='text-international-orange-600'> Sign Up Here</Link></h3>

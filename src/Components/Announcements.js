@@ -7,8 +7,8 @@ function AnnouncementList(){
         const { title, id, content  } = ann 
 
         return (
-            <div key={id}>
-                <h2>{title}</h2>
+            <div key={id} className="p-3">
+                <h2 className='text-xl font-semibold'>{title}</h2>
                 <section>
                     {content}
                 </section>
@@ -16,18 +16,36 @@ function AnnouncementList(){
         )
     } )
 
+    function NoAnnouncements(){
+        return(
+            <div>
+                <h1> No Announcements !</h1>
+            </div>
+        )
+    }
+
+    function AllAnnouncements(){
+        return(
+            <div className='p-3'>
+                <h1 className='text-3xl font-bold text-red-600 text-center'>Announcements </h1>
+                <section className='divide-y-4 divide-emerald-500'>
+                    {displayAnnouncements}
+                </section>
+            </div>
+        )
+    }
+
     useEffect(() => {
         fetch('/announcements')
         .then(r => r.json())
         .then(d => {
-            console.log(d)
             setAnnouncements(d)
         }); 
     },[])
 
     return(
-        <div>
-            {displayAnnouncements}
+        <div className='bg-slate-700 min-w-screen text-slate-300 border rounded-md'>
+            {announcements.length <= 0 ? <NoAnnouncements /> :  <AllAnnouncements /> }
         </div>
     )
 }

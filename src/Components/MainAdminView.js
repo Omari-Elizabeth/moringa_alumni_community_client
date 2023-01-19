@@ -1,19 +1,21 @@
 // All the adminstrator components are displayed here after they are authenticated / Logged In 
 
-import { Link } from "react-router-dom"; 
+import { Link  } from "react-router-dom"; 
 
-// import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
+import AdminNavigation from './AdminNav'; 
+
 // import AdminPostsDashboard from './Components/AdminPostsDashboard'
 // import AdminUsersDashboard from './Components/AdminUsersDashboard'
-// import AdminNavigation from './AdminNav'; 
 
 
-function MainAdminView( { admin , admin_token , admin_id , setAdmin}){
-    
+function MainAdminView( { admin , admin_token , admin_id , setAdmin , }){
+
     function handleLogOut(){
         localStorage.clear(); 
         setAdmin(null);
     }
+
+    console.log(admin)
 
     function LoggedAdmin(){
         return(
@@ -38,6 +40,7 @@ function MainAdminView( { admin , admin_token , admin_id , setAdmin}){
     return(
         <div>
             { admin ? <LoggedAdmin /> : <UnLoggedAdmin /> }
+            <AdminNavigation />
         </div>
     )
 }
