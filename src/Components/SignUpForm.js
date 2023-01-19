@@ -20,12 +20,27 @@ function SignUp({ user, setUser }) {
         setSignupData({ ...signupData, [e.target.name]: e.target.value });
         console.log(signupData)
 
+//  Sign Up Form
+import { useState, useEffect } from "react";
+import Logo from "../img/formlogo.png"
+import { Link, Redirect} from 'react-router-dom';
+function SignUp({ user, setUser }) {
+    const [signupData, setSignupData] = useState({
+        username: '',
+        password: '',
+        password_confirmation: ''
+    });
+    const [errors, setErrors] = useState([]);
+    const [isSignedUp, setIsSignedUp] = useState(false);
+    function handleSignupData(e) {
+        setSignupData({ ...signupData, [e.target.name]: e.target.value });
+        console.log(signupData)
     }
 
     function handleSubmit(e) {
         e.preventDefault()
         setErrors([]);
-
+        
         if (!signupData.username || !signupData.password || !signupData.password_confirmation) {
             setErrors(errors => [...errors, "All fields must not be blank"]);
             return;
@@ -75,7 +90,6 @@ function SignUp({ user, setUser }) {
                 <div className="m-auto ">
                     <img src={Logo} alt="logo" className="border rounded-xl mt-3" width={100} height={100} />
                 </div>
-
                 <h1 className="text-xl  text-international-orange-600 font-bold" >SIGN UP</h1>
                 <label className="text-white text-lg">
                     Username
@@ -86,9 +100,7 @@ function SignUp({ user, setUser }) {
                         placeholder="Pick a username"
                         required
                     />
-
                 </label>
-
                 <label className="text-white text-lg">
                     Password
                     <input type="password"
@@ -109,21 +121,17 @@ function SignUp({ user, setUser }) {
                         placeholder="Confirm Password"
                         required />
                 </label>
-
                 <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
 
                 <div className="flex justify-center gap-5">
                     <h3> Have an Account? <Link to='/login' className="text-international-orange-600"> Log In </Link> </h3>
                     <h3> <Link to='/home'>Return To <span className="text-international-orange-600 font-bold"> Home</span></Link> </h3>
                 </div>
-
             </form>
-
             <div className="flex justify-center gap-5">
                 <h3> Have an Account? <Link to='/login' className="text-red-500"> Log In </Link> </h3>
                 <h3> <Link to='/home'>Return To Home</Link> </h3>
             </div>
-
             <div className="text-red-600 font-bold text-xl p-3">
                 {errors.length > 0 && (
                     <div>
@@ -140,5 +148,4 @@ function SignUp({ user, setUser }) {
     )
 
 }
-
 export default SignUp;

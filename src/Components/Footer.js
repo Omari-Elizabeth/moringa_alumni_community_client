@@ -61,7 +61,8 @@ function Footer() {
           </div>
 
                   <div className="  flex justify-center items-center gap-14 pt-6 ">
-                  <a href="https://www.instagram.com/moringaschool/" target="_blank">
+                  <a href="https://www.instagram.com/moringaschool/" target="_blank" rel="noreferrer">
+
                   <img
             src={Insta}
             className="border rounded-2xl ml-7"
@@ -70,8 +71,8 @@ function Footer() {
             height={25}
                       />
                       </a>
-                      
-                      <a href="https://www.linkedin.com/school/moringa-school/?originalSubdomain=ke" target="_blank">
+                     
+                      <a href="https://www.linkedin.com/school/moringa-school/?originalSubdomain=ke" target="_blank" rel="noreferrer">
                                     
                       <img
             src={Linkedin}
@@ -82,7 +83,7 @@ function Footer() {
                       />
       </a>
               
-      <a href="https://twitter.com/moringaschool" target="_blank">
+      <a href="https://twitter.com/moringaschool " target="_blank" rel="noreferrer" >
       <img
             src={Twitter}
             className="border rounded-2xl ml-7"
@@ -92,9 +93,9 @@ function Footer() {
                       />
       </a> 
                       
-    
+   
+<a href="https://www.facebook.com/moringaschool/" target="_blank" rel="noreferrer" >
 
-<a href="https://www.facebook.com/moringaschool/" target="_blank">
 <img
             src={Facebook}
             className="border rounded-2xl ml-7"
