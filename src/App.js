@@ -3,26 +3,25 @@ import './App.css';
 import {  Route, Switch  } from 'react-router-dom'; 
 import { useEffect, useState } from 'react'; 
 
+
+// Home / Main Components :
 import MainDisplay from './Components/MainDisplay';
 import SignUp from './Components/SignUpForm';
 import Login from './Components/LoginForm';
 import About from './Components/About';
 
+
+// Admin Components :
 import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
 import AdminPostsDashboard from './Components/AdminPostsDashboard'
 import AdminUsersDashboard from './Components/AdminUsersDashboard'
-
-
-
 import AdminLogin from './Components/AdminLogin';
+import UpdateProfile from './Components/UpdateProfile';
 
-
-// import AdminAnnouncementsDashboard from './Components/AdminAnnouncementsDashboard';
-// import AdminPostsDashboard from './Components/AdminPostsDashboard'
-// import AdminUsersDashboard from './Components/AdminUsersDashboard'
-
+// Alum Components : 
 import MainAlumView from './Components/MainAlumniView';
 import MainAdminView from './Components/MainAdminView';
+import SinglePostPage from './Components/FetchPost';
 
 function App() {
 
@@ -38,20 +37,18 @@ function App() {
 
   useEffect(() => {
 
-  fetch(`/users/${user_id}`,{
-    method : "GET", 
-    Authorize : `Bearer ${login_token}`
-  })
-  .then(r => {
-     if(r.ok){
-      r.json().then(d => {
-        console.log(d)
-        setUser(d)
-      })
-     }
-  })
+    fetch(`/users/${user_id}`,{
+      method : "GET", 
+      Authorize : `Bearer ${login_token}`
+    })
+    .then(r => {
+      if(r.ok){
+        r.json().then(d => {
+          setUser(d)
+        })
+      }
+    })
 
-   
   },[login_token,user_id])
 
   useEffect(() => {
@@ -116,6 +113,14 @@ function App() {
 
       <Route path="/alum_home">
           <MainAlumView  user={user} setUser={setUser} login_token={login_token} user_id={user_id} />
+      </Route>
+
+      <Route path={`/posts/:id`}>
+        <SinglePostPage />
+      </Route>
+
+      <Route path="/update_profile">
+        <UpdateProfile />
       </Route>
 
   

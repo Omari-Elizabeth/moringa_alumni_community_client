@@ -5,19 +5,16 @@ import Post from './Post';
 function PostList(){
     const [ posts, setPosts ] = useState([]); 
 
-    console.log(posts); 
-
    useEffect(() => {
     fetch('/posts')
     .then(r => r.json())
     .then(d => {
-        // console.log(d)
         setPosts(d);
     })
    },[]); 
 
     return(
-        <div className='flex flex-col p-2 gap-3'>
+        <div className='divide-y-4 divide-emerald-500'>
             {
                 posts.map((post) => {
                     return <Post post={post} key={post.id} />
