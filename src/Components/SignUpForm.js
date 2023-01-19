@@ -113,7 +113,7 @@ function SignUp( { user , setUser }){
                 <h3 className="text-red-600 font-bold text-xl p-3" hidden={hideError}>{errorMessage}</h3>
             </div>
 
-            { user ?  <Redirect to="/alum_home" /> :  <Redirect to="/signup" /> }
+            { user ?  <Redirect to="/login" /> :  <Redirect to="/signup" /> }
         </section>
     )
 }

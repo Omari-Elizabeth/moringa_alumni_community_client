@@ -1,6 +1,7 @@
 
 import {  useState } from "react";
 import Logo from "../img/formlogo.png"
+import { Link } from "react-router-dom";
 
 
 const UpdateProfile = () => {
@@ -119,7 +120,7 @@ const UpdateProfile = () => {
             </label>
 
             <input type="submit" value="UPDATE"className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto'/>
-
+            <Link to="/alum_home">Home</Link>               
         </form>
 
       
