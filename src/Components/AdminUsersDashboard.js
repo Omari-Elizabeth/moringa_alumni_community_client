@@ -1,112 +1,112 @@
 import { useEffect, useState } from "react";
 function AdminUsersDashboard() {
   const [users, setUsers] = useState([]);
-  const [deleteuser, setDeleteUser] = useState(false);
   let apiUrl = "/users";
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((jsonfile) => {
-        // console.log(jsonfile);
+        console.log(jsonfile);
         setUsers(jsonfile);
       });
-  }, [apiUrl, deleteuser]);
+  }, [apiUrl, users]);
+
   function deleteUser(id) {
-    // console.log(id);
+    console.log(id);
     fetch(`/users/${id}`, {
       method: `DELETE`,
-    })
-    .then((result) => {
-      result.json().then((resp) => {
-        setUsers(resp);
-        console.log(id);
-        setDeleteUser(true);
-      });
-    });
-  }
-  function updateUser(id) {
-    console.log(id)
-    fetch(`/users/${id}`, {
-      method: `PATCH`,
     }).then((result) => {
       result.json().then((resp) => {
-        console.log(resp);
+        console.log(users);
+        setUsers(resp);
+        console.log(id);
       });
     });
   }
+
   return (
     <>
-    <div className="flex">
-      {/* <div className="h-screen w-60 bg-[#242772]"> */}
-        <aside className="bg-[#272747] p-10 h-screen">
-        {/* </aside> */}
-        <h2 className="text-sky-50">Admin Dashboard</h2>
+      <div className="flex flex-box">
+        <aside className="bg-[#272747] p-12 h-screen">
+          <h2 className="text-sky-50">
+            <a href="/admin_home">Admin Dashboard</a>
+          </h2>
+          <div>
+            <br />
+            <br />
+            <br />
+          </div>
+          <div className="h-96 ">
+            <div className="absolute text-center pl-12  ">
+              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600 ">
+                <a href="/admindashboard/users">Users</a>
+              </p>
+              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600  ">
+                <a href="/admindashboard/posts">Posts</a>
+              </p>
+              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600 ">
+                <a href="/admindashboard/announcements">Announcements</a>
+              </p>
+            </div>
+          </div>
+        </aside>
         <div>
-          <br />
-          <br />
-          <br />
-        </div>
-        <div className="h-96 ">
-          <div className="absolute  left-0 w-20 text-center pl-12  ">
-            <p className="text-orange-600 hover:text-sky-50 ">
-              <a href="/admindashboard/users">Users</a>
-            </p>
-            <p className="text-orange-600 hover:text-sky-50">
-              <a href="/admindashboard/posts">Posts</a>
-            </p>
-            <p className="text-orange-600 hover:text-sky-50">
-              <a href="/admindashboard/announcements">Announcements</a>
-            </p>
+          <div className="w-3/4 ml-96 ">
+            <h1 className="font-bold text-2xl">Users</h1> <br />
+            <br />
+            <table className="bg-[#242747] border-collapse:collapse;">
+              <thead>
+                <tr className="bg-[#242747]">
+                  <th className="border p-2 ">User ID</th>
+                  <th className="border p-2 ">User Name</th>
+                  <th className="border p-2 ">Full Name</th>
+                  <th className="border p-2 ">Profession</th>
+                  <th className="border p-2">Cohort</th>
+                  <th className="border p-2 ">Action</th>
+                </tr>
+              </thead>
+              {users.map((user, i) => {
+                console.log(user.profile);
+                return (
+                  <tbody key={i} value={user}>
+                    <tr key={i} value={user}>
+                      <td className="border p-2">{user.id}</td>
+                      <td className="border p-2">{user.username}</td>
+
+                      <td className="border p-2">
+                        {user.profile
+                          ? `${user.profile.fname} ${user.profile.lname}`
+                          : "No Profile"}
+                      </td>
+
+                      <td className="border p-2">
+                        {user.profile
+                          ? `${user.profile.profession} `
+                          : "No Profile"}
+                      </td>
+                      <td className="border p-2">
+                        {user.profile
+                          ? `${user.profile.cohort} `
+                          : "No Profile"}
+                      </td>
+                      <td className="border p-2 space-x-4">
+                        <button
+                          title="Delete"
+                          data-toggle="tooltip"
+                          onClick={() => deleteUser(user.id)}
+                          className="text-blue-600 bg-red-500 rounded-full  p-2 "
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
           </div>
         </div>
-        </aside>
-      {/* </div> */}
-      <div>
-        <div className="ml-96 ">
-          <h1 className="font-bold text-2xl">Users</h1> <br />
-          <br />
-          <table className="bg-[#242747] border-collapse:collapse;">
-            <thead>
-              <tr className="bg-[#242747]">
-                <th className="border p-2 ">User ID</th>
-                <th className="border p-2 ">Username</th>
-                <th className="border p-2">Cohort</th>
-                <th className="border p-2 ">Action</th>
-              </tr>
-            </thead>
-            {users.map((user, i) => {
-              return (
-                <tbody key={i} value={user}>
-                  <tr key={i} value={user}>
-                    <td className="border p-2">{user.id}</td>
-                    <td className="border p-2">{user.username}</td>
-                    <td className="border p-2">{user.profile.cohort}</td>
-                    <td className="border p-2 space-x-4">
-                      <button
-                        title="Delete"
-                        data-toggle="tooltip"
-                        onClick={() => deleteUser(`${user.id}`)}
-                        className="text-blue-600 bg-red-500 rounded-full  p-2 "
-                      >
-                        Delete
-                      </button>
-                      <button
-                        title="Delete"
-                        data-toggle="tooltip"
-                        onClick={() => updateUser(user.id)}
-                        className="text-blue-600 bg-green-500 rounded-full p-2"
-                      >
-                        Update
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              );
-            })}
-          </table>
-        </div>
       </div>
-     </div>
     </>
   );
 }
