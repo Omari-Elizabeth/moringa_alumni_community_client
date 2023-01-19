@@ -14,7 +14,7 @@ function PostList(){
    },[]); 
 
     return(
-        <div className='divide-y-4 divide-emerald-500'>
+        <div className='divide-y-4 divide-emerald-500 pr-12'>
             {
                 posts.map((post) => {
                     return <Post post={post} key={post.id} />

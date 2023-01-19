@@ -25,10 +25,10 @@ function MainAlumView( { user , setUser , login_token, user_id }){
     function LoggedDisplay(){
 
         return (
-            <div className="min-h-screen min-w-screen p-3 flex flex-col justify-center text-left">
+            <div className="min-h-screen min-w-screen p-3 flex flex-col justify-center text-left gap-6">
             <div>
                 <AlumNavigation />
-                <div className="grid grid-flow-col gap-6 items-start">
+                <div className="grid grid-flow-col gap-10 items-start">
                     <Profile user={user} setUser={setUser} />
                     <PostList login_token={login_token} user_id={user_id}/>
                     <AnnouncementList />
