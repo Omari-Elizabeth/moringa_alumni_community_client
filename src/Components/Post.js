@@ -30,7 +30,7 @@ function Post( { post }){
 
         fetch(`/comments`,{
             method : 'POST', 
-            "Content-Type" : "application/json",
+            headers : {"Content-Type" : "application/json"},
             Authorize : `Bearer ${login_token}`,
             body : JSON.stringify(sendData)
         })
