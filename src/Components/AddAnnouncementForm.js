@@ -1,46 +1,69 @@
 import { useState } from "react";
-
-function AddAnnouncementForm() {
+function AddAnnouncementForm({ setChange }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [url, setUrl] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    const announcement = {
-      title: title,
-      content: content,
-      imageurl: url,
-    };
 
-    console.log(announcement);
+    const formData = new FormData()
+
+    formData.append("title", title)
+    formData.append("content", content)
+    formData.append("announcement_image", e.target.image.files[0])
+
+
+    fetch("/announcements", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+       
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+      setChange(true)
+      setContent('');
+      setTitle('');
+   
   }
   return (
     <>
-      <form onSubmit={handleSubmit} className="p-6 bg-[#242747]">
-        <h1 className="text-orange-500">Add Announcement</h1>
-        <label className="text-white center">Title </label>
+      <form onSubmit={handleSubmit} className="p-10 bg-[#242747]">
+        <h1 className="text-orange-500 p-5">Add Announcement</h1>
+        <label className="text-white center p-10">Title</label>
         <input
+          // id="title"
           type="text"
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => {
+            setTitle(e.target.value)
+          }}
           placeholder="Enter Title"
         />
-
-        <label className="text-white">Content </label>
-        <input
-          type="textarea"
-          onChange={(e) => setContent(e.target.value)}
+        <br />
+        <label className="text-white p-10 py-10">Content </label>
+        <textarea
+          value={content}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
           placeholder="Enter Announcement"
         />
 
-        <label className="text-white">Image URl</label>
-        <input
-          type="text"
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="url"
-        />
+        <br />
 
-        <button className="bg-[#FF731D] text-white hover:bg-cyan-600">
+        <label className="text-white text-right">Image URl</label>
+        <input
+          type="file"
+          id="image"
+        />
+        <br />
+        <br />
+        <button type="submit" className="bg-[#FF731D] font-bold ml-20  w-20 text-white hover:bg-cyan-600">
+
           Add
         </button>
       </form>

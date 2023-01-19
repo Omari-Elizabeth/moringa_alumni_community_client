@@ -21,7 +21,17 @@ const UpdateProfile = () => {
         e.preventDefault()
 
         console.log(firstname, lastname, gender, cohort, birthday, profession, avatar); 
-        
+
+        const profile ={
+            firstname: firstname,
+            lastname : lastname,
+            gender : gender,
+            cohort: cohort,
+            birthday : birthday,
+            profession: profession,
+            avatar: avatar
+        }
+        console.log(profile)
         setFirstName("");
         setLastName("");
         setGender("");
