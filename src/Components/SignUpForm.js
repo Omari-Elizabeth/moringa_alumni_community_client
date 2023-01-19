@@ -35,7 +35,11 @@ function SignUp( { user , setUser }){
             } else {
                 r.json().then(e => {
                     setTimeout(() => {
-                        console.log(e.error) 
+
+                        console.log(e)
+
+                        console.log(e.errors);
+
                         setHideError(false);
                         setErrorMessage(e.error);
                     },500);
