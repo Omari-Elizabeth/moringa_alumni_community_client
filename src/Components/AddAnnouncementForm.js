@@ -25,7 +25,7 @@ function AddAnnouncementForm({ setChange }) {
       .catch((err) => {
         console.log(err.message);
       });
-      setChange(false)
+      setChange(true)
       setContent('');
       setTitle('');
    
