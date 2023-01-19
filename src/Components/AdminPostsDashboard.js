@@ -28,7 +28,7 @@ function AdminAnnouncementsDashboard() {
   return (
     <>
       <div className="flex">
-        <aside className="w-30 fixed left-0  bg-[#272747] p-12 w-1/4 items-center h-screen">
+      <aside className="w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
           <h2 className="text-sky-50">
             <a href="/admin_home">Admin Dashboard</a>
           </h2>
@@ -52,7 +52,7 @@ function AdminAnnouncementsDashboard() {
           </div>
         </aside>
         <div>
-          <div className="w-1/2 ml-96 ">
+          <div className="w-1/2 m-auto ">
             <h1 className="font-bold text-2xl">Posts</h1> <br />
             <br />
             {posts.map((post, i) => {

@@ -82,7 +82,7 @@ function AdminAnnouncementsDashboard() {
                 <h2 className="text-orange-600 font-bold mb-10">
                   {announcements.title}
                 </h2>
-              
+                <img src={announcements.announcement_image_url} alt="announcements visual"/>
                 <p>{announcements.content}</p>
               </div>
             );
