@@ -1,7 +1,8 @@
-// //  Sign Up Form 
-// import { useState, useEffect } from "react";
-// import Logo from "../img/formlogo.png"
-// import { Link, Redirect } from 'react-router-dom';
+//  Sign Up Form 
+import { useState  } from "react";
+import Logo from "../img/formlogo.png"
+import { Link, Redirect } from 'react-router-dom';
+
 
 
 // function SignUp({ user, setUser }) {

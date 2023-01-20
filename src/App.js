@@ -121,7 +121,7 @@ function App() {
       </Route>
 
       <Route path="/update_profile">
-        <UpdateProfile />
+        <UpdateProfile  user={user} setUser={setUser}/>
       </Route>
 
   
