@@ -7,7 +7,7 @@ const About = () => {
     <>
       <div className=" min-h-screen bg-about-image bg-cover">
         <Navigation />
-        <div className="w-96 text-xl bg-black opacity-70 ml-8 mt-6">
+        <div className="w-96 text-xl bg-black border rounded-3xl ml-8 mt-6">
           <h1 className="text-5xl text-international-orange-600 ">Our Vision</h1>
           <div className="pt-4 ">
           <p className="font-bold">A world in which anyone<br></br> can create their future.</p>

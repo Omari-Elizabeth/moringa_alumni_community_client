@@ -32,32 +32,32 @@ function AdminAnnouncementsDashboard() {
 
   return (
     <>
-      <div className="flex">
+      <div className="grid grid-cols-1 md:flex">
         <aside className="w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
-          <h2 className="text-sky-50"><a href="/admin_home">
+          <h2 className="text-white font-bold text-2xl  p-3 border rounded-2xl"><a href="/admin_home">
             Admin Dashboard
             </a></h2>
           <div>
-            <br />
+          
             <br />
             <br />
           </div>
           <div className="h-96 ">
             <div className="absolute  left-0 text-center pl-6  ">
-              <p className="text-orange-600 hover:bg-orange-600 hover:text-sky-50 ">
+              <p className="text-orange-600 text-xl font-bold hover:bg-orange-600 hover:text-sky-50 bg-white  border rounded-xl p-3">
                 <a href="/admindashboard/users">Users</a>
-              </p>
-              <p className="text-orange-600 hover:bg-orange-600  hover:text-sky-50">
+              </p><br></br>
+              <p className="text-orange-600  text-xl font-bold hover:bg-orange-600  hover:text-sky-50 bg-white  border rounded-xl p-3">
                 <a href="/admindashboard/posts">Posts</a>
-              </p>
-              <p className="text-orange-600 hover:bg-orange-600  hover:text-sky-50">
+              </p><br></br>
+              <p className="text-orange-600  text-xl font-bold hover:bg-orange-600  hover:text-sky-50 bg-white  border rounded-xl p-3">
                 <a href="/admindashboard/announcements">Announcements</a>
               </p>
             </div>
           </div>
         </aside>
         <div className="w-1/2 ml-96">
-          <h1 className="font-bold text-2xl text-blue-500">Announcements</h1>{" "}
+          <h1 className="font-bold text-2xl text-black">Announcements</h1>{" "}
           <Popup
             trigger={
               <button className="absolute bg-[#FF731D] rounded-lg text-white  font-bold p-1 hover:bg-cyan-600 top-5 right-20">

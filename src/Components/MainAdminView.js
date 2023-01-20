@@ -19,9 +19,9 @@ function MainAdminView( { admin , admin_token , admin_id , setAdmin , }){
 
     function LoggedAdmin(){
         return(
-            <div className="p-5 flex gap-6 justify-center align-middle">
-                <h1 className="font-bold text-2xl"> Hello Admin, {admin.username}</h1>
-                <button onClick={handleLogOut} className="border rounded-lg p-1 font-bold border-slate-800 bg-red-700 hover:bg-slate-500 hover:text-white">Log Out</button>
+            <div className="p-5 flex  flex-col-1 md:gap-96 justify-center align-middle bg-white shadow-2xl">
+                <h1 className="font-bold text-2xl text-black"> Welcome {admin.username}</h1>
+                <button onClick={handleLogOut} className="border rounded-lg font-bold border-slate-800 bg-international-orange-600 text-black p-2 hover:bg-slate-500 hover:text-white">Log Out</button>
             </div>
         )
 
@@ -29,9 +29,9 @@ function MainAdminView( { admin , admin_token , admin_id , setAdmin , }){
 
     function UnLoggedAdmin(){
         return(
-            <div className="p-6 min-h-screen bg-inherit flex flex-col gap-5">
-            <h1 className="font-semibold text-2xl"> Hey Admin! Looks like you're signed out / your login credentieals were unsuccessful. </h1>
-            <Link to="/admin_login"> <h1 className="text-slate-200 hover:text-red-400 font-bold text-xl"> Try Logging In again Here</h1> </Link>
+            <div className="p-6 min-h-screen bg-inherit flex flex-col gap-5 m-auto bg-admin-image bg-cover">
+            <h1 className="font-semibold text-black text-2xl"> Hey Admin! Looks like you're signed out / your login credentials were unsuccessful. </h1>
+            <Link to="/admin_login"> <h1 className="text-international-orange-600 m-20 hover:text-red-400 font-bold text-xl"> Try Logging In again <span className="bg-cloud-burst-600 p-2"> Here</span> </h1> </Link>
         </div>
         )
 

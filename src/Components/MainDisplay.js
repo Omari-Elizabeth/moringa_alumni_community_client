@@ -78,7 +78,7 @@ export function Navigation() {
                     <div>
           <img
             src={Logo}
-            className="border rounded-2xl ml-7"
+            className="border rounded-2xl"
             alt="logo"
             width={50}
             height={50}
@@ -129,7 +129,7 @@ export function Navigation() {
                         }`}
                     >
                         <div className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                        <Link to="/home" className=" font-bold text-international-orange-600 hover:text-white">
+                        <Link to="/home" className=" md:font-bold text-international-orange-600 hover:text-white">
             {" "}
             Home
           </Link>
@@ -147,9 +147,9 @@ export function Navigation() {
           <Link to="/login" className=" font-bold text-international-orange-600 hover:text-white">
             Log In
           </Link>
-          <Link to="/admin_login" className="font-bold text-international-orange-600 hover:text-white">
+          {/* <Link to="/admin_login" className="font-bold text-international-orange-600 hover:text-white">
             Adminstrators
-          </Link>
+          </Link> */}
                         </div>
                     </div>
                 </div>
