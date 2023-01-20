@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 function Profile( { user , setUser  }){     
   
-    
+    console.log(user.profile.avatar_url)
+
     function signOut(){
         localStorage.clear(); 
         
@@ -19,14 +20,14 @@ function Profile( { user , setUser  }){
         return (
             <div>
                 <div className="text-left p-5 text-slate-300 border flex flex-col gap-3">
-                <h2>Your Profile</h2>
+                <h2>Hey it's {user.username}</h2>
                 <div>
-                    <img src={avatar} alt="" />
+                    <img src={user.profile.avatar_url} alt="my profile pic" style={{borderRadius: '50%',width: '100px', height: '100px'}}/>
                 </div>
-                    <h3>{fname} {lname}</h3>
-                    <h4>{profession}</h4>
+                    <h3>Name: {fname} {lname}</h3>
+                    <h4>Job Title: {profession}</h4>
                     <h4>{gender}</h4>
-                    <h4>{cohort}</h4>
+                    <h4>Cohort: {cohort}</h4>
                     <button onClick={signOut} className=" bg-red-600 p-2 border rounded-lg hover:bg-slate-500 hover:text-white">Log Out</button>
                 </div>
             </div>
