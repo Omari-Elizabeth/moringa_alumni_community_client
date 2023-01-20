@@ -29,7 +29,7 @@ function AdminAnnouncementsDashboard() {
     <>
       <div className="grid grid-cols-1 md:flex">
       <aside className="w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
-          <h2 className="text-white font-bold text-2xl">
+          <h2 className="text-white font-bold text-2xl p-3 border rounded-2xl">
             <a href="/admin_home">Admin Dashboard</a>
           </h2>
           <div>

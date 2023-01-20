@@ -21,7 +21,7 @@ function MainAdminView( { admin , admin_token , admin_id , setAdmin , }){
         return(
             <div className="p-5 flex  flex-col-1 md:gap-96 justify-center align-middle bg-white shadow-2xl">
                 <h1 className="font-bold text-2xl text-black"> Welcome {admin.username}</h1>
-                <button onClick={handleLogOut} className="border rounded-lg p-1 font-bold border-slate-800 bg-red-700 hover:bg-slate-500 hover:text-white">Log Out</button>
+                <button onClick={handleLogOut} className="border rounded-lg font-bold border-slate-800 bg-international-orange-600 text-black p-2 hover:bg-slate-500 hover:text-white">Log Out</button>
             </div>
         )
 
