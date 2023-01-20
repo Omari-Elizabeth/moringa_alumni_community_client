@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 function Profile( { user , setUser  }){     
   
-    console.log(user.profile.avatar_url)
+    // console.log(user.profile.avatar_url)
+    console.log(user.profile)
 
     function signOut(){
         localStorage.clear(); 
@@ -22,7 +23,8 @@ function Profile( { user , setUser  }){
                 <div className="text-left p-5 text-slate-300 border flex flex-col gap-3">
                 <h2>Hey it's {user.username}</h2>
                 <div>
-                    <img src={user.profile.avatar_url} alt="my profile pic" style={{borderRadius: '50%',width: '100px', height: '100px'}}/>
+                    {/* <img src={user.profile.avatar_url} alt="my profile pic" style={{borderRadius: '50%',width: '100px', height: '100px'}}/> */}
+                    {user.profile ? <img src={user.profile.avatar_url} alt="Profile pic" style={{borderRadius: '50%',width: '100px', height: '100px'}}/> : null}
                 </div>
                     <h3>Name: {fname} {lname}</h3>
                     <h4>Job Title: {profession}</h4>
@@ -33,8 +35,6 @@ function Profile( { user , setUser  }){
             </div>
         )
     }
-
-
 
     function NoProfile(){
         return(

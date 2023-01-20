@@ -1,14 +1,13 @@
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Logo from "../img/formlogo.png"
 import { Link, Redirect } from "react-router-dom";
 
 
-const UpdateProfile = ({ user, setUser }) => {
-    const formRef = useRef(null);
+const UpdateProfile = () => {
     const userId = localStorage.getItem("user_id");
     console.log(localStorage.getItem("login_token"));
-    // console.log(user_id)
+    console.log(userId)
     const [fname, setFName] = useState("");
     const [lname, setLName] = useState("");
     const [gender, setGender] = useState("");
@@ -33,7 +32,6 @@ const UpdateProfile = ({ user, setUser }) => {
         formData.append("profession", profession)
         formData.append("user_id", user_id)
         formData.append("avatar", e.target.image.files[0])
-
 
         fetch("/profiles", {
             method: "POST",
