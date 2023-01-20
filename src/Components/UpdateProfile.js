@@ -1,10 +1,11 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Logo from "../img/formlogo.png"
 import { Link, Redirect } from "react-router-dom";
 
 
-const UpdateProfile = () => {
+const UpdateProfile = ({ user, setUser }) => {
+    const formRef = useRef(null);
     const userId = localStorage.getItem("user_id");
     console.log(localStorage.getItem("login_token"));
     // console.log(user_id)
@@ -44,8 +45,7 @@ const UpdateProfile = () => {
                     r.json().then((d) => {
                         console.log(d, "<= everything returned from the server")
 
-                        alert("Profile successfully updated ")
-                        return <Redirect to="/alum_home" />
+                        alert("Profile updated successfully, Click home button to view your account")
 
                     })
                 } else {
@@ -54,18 +54,20 @@ const UpdateProfile = () => {
                         let allErrors = e.errors
                         for (let i = 0; i < allErrors.length; i++) {
                             console.log(allErrors[i])
-                        setErrors(errors => [...errors, allErrors[i]])
-                           
+                            setErrors(errors => [...errors, allErrors[i]])
+
                         }
                     })
                 }
             })
+
         setFName("")
         setLName("")
         setGender("")
         setCohort("")
         setBirthday("")
         setProfession("")
+        setUserid("")
 
 
     }
@@ -170,6 +172,7 @@ const UpdateProfile = () => {
                     )}
 
                 </div>
+
             </form>
 
 
