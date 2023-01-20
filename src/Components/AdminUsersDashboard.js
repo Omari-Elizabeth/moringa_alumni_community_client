@@ -26,9 +26,9 @@ function AdminUsersDashboard() {
 
   return (
     <>
-      <div className="flex flex-box">
-        <aside className="w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
-          <h2 className="text-sky-50">
+      <div className="grid grid-cols-1 md:flex">
+        <aside className=" md:w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
+          <h2 className="text-white font-bold text-2xl">
             <a href="/admin_home">Admin Dashboard</a>
           </h2>
           <div>
@@ -38,13 +38,13 @@ function AdminUsersDashboard() {
           </div>
           <div className="h-96 ">
             <div className="absolute text-center pl-12  ">
-              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600 ">
+              <p className="text-orange-600  text-xl font-bold hover:text-sky-50 hover:bg-orange-600 bg-white  border rounded-xl p-3">
                 <a href="/admindashboard/users">Users</a>
-              </p>
-              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600  ">
+              </p><br></br>
+              <p className="text-orange-600 text-xl font-bold  hover:text-sky-50 hover:bg-orange-600 bg-white  border rounded-xl p-3 ">
                 <a href="/admindashboard/posts">Posts</a>
-              </p>
-              <p className="text-orange-600 hover:text-sky-50 hover:bg-orange-600 ">
+              </p><br></br>
+              <p className="text-orange-600 text-xl font-bold  hover:text-sky-50 hover:bg-orange-600 bg-white  border rounded-xl p-3 ">
                 <a href="/admindashboard/announcements">Announcements</a>
               </p>
             </div>

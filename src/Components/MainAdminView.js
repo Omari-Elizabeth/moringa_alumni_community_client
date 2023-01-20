@@ -29,9 +29,9 @@ function MainAdminView( { admin , admin_token , admin_id , setAdmin , }){
 
     function UnLoggedAdmin(){
         return(
-            <div className="p-6 min-h-screen bg-inherit flex flex-col gap-5 ">
-            <h1 className="font-semibold text-2xl"> Hey Admin! Looks like you're signed out / your login credentieals were unsuccessful. </h1>
-            <Link to="/admin_login"> <h1 className="text-slate-200 hover:text-red-400 font-bold text-xl"> Try Logging In again Here</h1> </Link>
+            <div className="p-6 min-h-screen bg-inherit flex flex-col gap-5 m-auto bg-admin-image bg-cover">
+            <h1 className="font-semibold text-black text-2xl"> Hey Admin! Looks like you're signed out / your login credentials were unsuccessful. </h1>
+            <Link to="/admin_login"> <h1 className="text-international-orange-600 m-20 hover:text-red-400 font-bold text-xl"> Try Logging In again <span className="bg-cloud-burst-600 p-2"> Here</span> </h1> </Link>
         </div>
         )
 

@@ -119,7 +119,7 @@ function SignUp({ user, setUser }) {
                         placeholder="Confirm Password"
                         required />
                 </label>
-                <input type="submit" className='rounded text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
+                <input type="submit" className=' text-white hover:bg-cloud-burst-600  bg-international-orange-600 hover:text-white w-40 p-3 border rounded-3xl m-auto' />
 
                 <div className="flex justify-center gap-5">
                     <h3> Have an Account? <Link to='/login' className="text-international-orange-600"> Log In </Link> </h3>
