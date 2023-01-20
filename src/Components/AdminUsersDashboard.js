@@ -27,7 +27,7 @@ function AdminUsersDashboard() {
   return (
     <>
       <div className="flex flex-box">
-        <aside className="bg-[#272747] p-12 h-screen">
+        <aside className="w-30 fixed left-0 top-0 h-screen bg-[#272747] p-10">
           <h2 className="text-sky-50">
             <a href="/admin_home">Admin Dashboard</a>
           </h2>

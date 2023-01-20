@@ -26,8 +26,8 @@ function AnnouncementList(){
 
     function AllAnnouncements(){
         return(
-            <div className='p-3'>
-                <h1 className='text-3xl font-bold text-red-600 text-center'>Announcements </h1>
+            <div className='p-4'>
+                <h1 className='text-3xl font-bold text-red-600 text-left'>Announcements </h1>
                 <section className='divide-y-4 divide-emerald-500'>
                     {displayAnnouncements}
                 </section>
