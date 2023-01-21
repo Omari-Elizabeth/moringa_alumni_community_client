@@ -5,8 +5,17 @@ import { FaCommentAlt , FaHeart } from "react-icons/fa";
 import { useState } from "react"; 
 
 function Post( { post }){
+
+    // console.log(post)
+    // // let uname=post.user.username
+    // const [username,setUserName]=useState(uname)
+    // console.log(username)
      
     const { id, title, content, likes, comments , image , user  } = post ; 
+
+    console.log(post.title)
+    console.log(post.user?post.user.username:"user doesn't exist")
+   
 
     const [ hideForm , setHideForm ] = useState(true); 
     const [ newComment, setNewComment ] = useState(""); 
@@ -44,10 +53,15 @@ function Post( { post }){
    
 
     return(
+      
             <section className="flex flex-col items-left text-left p-3">
+                  {post.user?
                     <div className="grid gap-4 ">
-                    <h2 className="font-bold text-2xl">{ title} By <span className="text-red-600">{user.username} </span></h2>
-                    <img src={image} alt="" className="object-cover border rounded-lg"/>   
+                        
+                    {/* <h2 className="font-bold text-2xl">{post.title} By <span className="text-red-600">{post.user?post.user.username:null}</span></h2> */}
+                   <h2 className="font-bold text-2xl">{post.title} By <span className="text-red-600">{post.user.username}</span></h2>
+                  
+                    <img src={image} alt="featured image" className="object-cover border rounded-lg" />   
                         <section>
                             {content}
                         </section>
@@ -66,8 +80,9 @@ function Post( { post }){
                         <span className="italic font-semibold hover:text-blue-700"> View Post </span>
                     </Link>
                     </div>
-
+                    :null}
                 </section>
+                
     )
 }
 

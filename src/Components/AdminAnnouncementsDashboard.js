@@ -25,7 +25,7 @@ function AdminAnnouncementsDashboard() {
       })
       .then((resp) => {
     
-        setChange(true);
+        // setChange(true);
       });
     setChange(true);
   }

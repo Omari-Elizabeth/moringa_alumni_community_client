@@ -5,70 +5,54 @@ import { Link, Redirect } from "react-router-dom";
 
 
 const UpdateProfile = () => {
+    const [profile, setProfile] = useState({});
+    const [avatar, setAvatar] = useState(null);
     const userId = localStorage.getItem("user_id");
+    const token = localStorage.getItem("login_token")
     console.log(localStorage.getItem("login_token"));
     console.log(userId)
-    const [fname, setFName] = useState("");
-    const [lname, setLName] = useState("");
-    const [gender, setGender] = useState("");
-    const [cohort, setCohort] = useState("");
-    const [birthday, setBirthday] = useState("");
-    const [profession, setProfession] = useState("");
-    const [user_id, setUserid] = useState(userId)
-    console.log(user_id)
 
     const [errors, setErrors] = useState([]);
 
-    function handleSubmit(e) {
-
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors([]);
+
+        try {
+
         const formData = new FormData()
-        formData.append("fname", fname)
-        formData.append("lname", lname)
-        formData.append("gender", gender)
-        formData.append("cohort", cohort)
-        formData.append("birthday", birthday)
-        formData.append("profession", profession)
-        formData.append("user_id", user_id)
-        formData.append("avatar", e.target.image.files[0])
+        formData.append("user_id", userId)
+        formData.append("fname", profile.fname)
+        formData.append("lname", profile.lname)
+        formData.append("gender", profile.gender)
+        formData.append("cohort", profile.cohort)
+        formData.append("birthday", profile.birthday)
+        formData.append("profession", profile.profession)
+        formData.append("avatar", avatar)
 
-        fetch("/profiles", {
-            method: "POST",
-            body: formData,
-        })
+        // formData.append("avatar", e.target.image.files[0])
 
-            .then(r => {
-                if (r.ok) {
-                    r.json().then((d) => {
-                        console.log(d, "<= everything returned from the server")
+        const response = await fetch("/profiles", {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            body: formData
+        });
 
-                        alert("Profile updated successfully, Click home button to view your account")
-
-                    })
-                } else {
-                    r.json().then((e) => {
-                        console.log(e.errors.length)
-                        let allErrors = e.errors
-                        for (let i = 0; i < allErrors.length; i++) {
-                            console.log(allErrors[i])
-                            setErrors(errors => [...errors, allErrors[i]])
-
-                        }
-                    })
-                }
-            })
-
-        setFName("")
-        setLName("")
-        setGender("")
-        setCohort("")
-        setBirthday("")
-        setProfession("")
-        setUserid("")
-
-
-    }
+        const data = await response.json();
+            if (response.status === 201) {
+                console.log(data)
+                alert("Profile updated successfully, Click home button to view your account")
+            } else {
+                console.log("Ahh kuna kashida mahali")
+            }
+        } 
+          catch(error) {
+            console.error(error);
+        }
+    } 
+    
     return (
         <section className="min-h-full">
 
@@ -84,7 +68,7 @@ const UpdateProfile = () => {
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
                         value={userId}
-                        id="user_id"
+                    // id="user_id"
 
                     />
                 </label>
@@ -92,9 +76,9 @@ const UpdateProfile = () => {
                     First Name
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setFName(e.target.value)
-                        }}
+                        name="fname"
+                        value={profile.fname}
+                        onChange={e => setProfile({ ...profile, fname: e.target.value })}
                         placeholder="Enter your first name" />
                 </label>
 
@@ -102,9 +86,8 @@ const UpdateProfile = () => {
                     Last Name
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setLName(e.target.value)
-                        }}
+                        name="lname"
+                        onChange={e => setProfile({ ...profile, lname: e.target.value })}
                         placeholder="Enter your last name " />
                 </label>
 
@@ -112,9 +95,8 @@ const UpdateProfile = () => {
                     Gender
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setGender(e.target.value)
-                        }}
+                        name="gender"
+                        onChange={e => setProfile({ ...profile, gender: e.target.value })}
                         placeholder="Male or Female" />
                 </label>
 
@@ -122,9 +104,8 @@ const UpdateProfile = () => {
                     Cohort
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setCohort(e.target.value)
-                        }}
+                        name="cohort"
+                        onChange={e => setProfile({ ...profile, cohort: e.target.value })}
                         placeholder="must include sd or ds" />
                 </label>
 
@@ -132,9 +113,8 @@ const UpdateProfile = () => {
                     Birthday
                     <input type="date"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setBirthday(e.target.value)
-                        }}
+                        name="birthday"
+                        onChange={e => setProfile({ ...profile, birthday: e.target.value })}
                         placeholder="Input your birthday" />
                 </label>
 
@@ -142,9 +122,8 @@ const UpdateProfile = () => {
                     Profession
                     <input type="text"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        onChange={(e) => {
-                            setProfession(e.target.value)
-                        }}
+                        name="profession"
+                        onChange={e => setProfile({ ...profile, profession: e.target.value })}
                         placeholder="ie .UI/UX designer, Front-end Devloper" />
                 </label>
 
@@ -152,8 +131,9 @@ const UpdateProfile = () => {
                     Profile photo
                     <input type="file"
                         className="text-black p-2 m-2 border rounded-3xl w-4/12"
-                        id="image"
-
+                        name="avatar"
+                        // id="image"
+                        onChange={e => setAvatar(e.target.files[0])}
                     />
                 </label>
 

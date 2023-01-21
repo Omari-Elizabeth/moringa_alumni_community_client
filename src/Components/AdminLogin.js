@@ -16,7 +16,7 @@ function AdminLogin( { admin , setAdmin }){
     function handleSubmit(e){
         e.preventDefault()
 
-        fetch('/admin-login',{
+        fetch('/admin_login',{
             method : 'POST', 
             headers : {
                 "Content-Type" : "application/json",
@@ -29,6 +29,8 @@ function AdminLogin( { admin , setAdmin }){
                     // Store Admin Token and their ID in LocalStorage 
                     localStorage.setItem("admin_token", d.token); 
                     localStorage.setItem("admin_id", d.admin.id);
+
+                    console.log(localStorage.getItem("admin_token"))
                     
                     // Store Admin in State 
                     setAdmin(d.admin);
@@ -81,7 +83,7 @@ function AdminLogin( { admin , setAdmin }){
                 <div className='flex justify-center gap-5 text-black text-sm md:text-white md:text-lg'>
                     <h3> <Link to='/home'>Return To<span className='text-international-orange-600 font-bold'> Home</span> </Link> </h3>
                 </div>
-
+{/* 
                 <div>
                     <section hidden={hideErrors}>
                         {errorMessages.map((e) => {
@@ -89,7 +91,7 @@ function AdminLogin( { admin , setAdmin }){
 
                         })}
                     </section>
-                 </div>
+                 </div> */}
 
             </form>
 

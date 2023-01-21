@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 function AdminAnnouncementsDashboard() {
   const [posts, setPosts] = useState([]);
   const [change, setChange] = useState(false);
+  // let user=localStorage.getItem("user_id")
   const apiUrl = "/posts";
   useEffect(() => {
     fetch(apiUrl)
