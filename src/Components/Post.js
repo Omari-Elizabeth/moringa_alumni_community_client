@@ -13,6 +13,7 @@ function Post( { post }){
      
     const { id, title, content, likes, comments , image , user  } = post ; 
 
+        // updated
     console.log(post.title)
     console.log(post.user?post.user.username:"user doesn't exist")
    

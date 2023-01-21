@@ -5,6 +5,7 @@ import { Link, Redirect } from "react-router-dom";
 
 
 const UpdateProfile = () => {
+    // updated
     const [profile, setProfile] = useState({});
     const [avatar, setAvatar] = useState(null);
     const userId = localStorage.getItem("user_id");
